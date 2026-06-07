@@ -1,0 +1,61 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import App from '../components/App';
+import type { ArticleData, ArticleEntry } from '../types/articles';
+import { clusterImage } from '../types/articles';
+
+const docs = await getCollection('docs');
+
+// ── Tier separation ────────────────────────────────────────────────────────
+const pillars = docs
+  .filter(d => d.data.pillar != null)
+  .sort((a, b) => (a.data.pillar ?? 0) - (b.data.pillar ?? 0))
+  .map(d => ({
+    title: d.data.title,
+    url: d.data.url,
+    cluster: d.data.cluster ?? '',
+    pillar: d.data.pillar,
+    image: d.data.image ?? clusterImage(d.data.cluster),
+  } satisfies ArticleEntry));
+
+const spokes = docs
+  .filter(d => d.data.spoke != null)
+  .sort((a, b) => (a.data.spoke ?? '').localeCompare(b.data.spoke ?? ''))
+  .map(d => ({
+    title: d.data.title,
+    url: d.data.url,
+    cluster: d.data.cluster ?? '',
+    spoke: d.data.spoke,
+    parentPillar: d.data.parent_pillar,
+    excerpt: d.data.excerpt,
+    image: d.data.image ?? clusterImage(d.data.cluster),
+    featured: d.data.featured ?? false,
+    readTime: d.data.readTime ?? '8 min',
+    pubDate: d.data.pubDate?.toISOString().slice(0, 10),
+  } satisfies ArticleEntry));
+
+// Recent = all spoke + detail entries, most recent first (by pubDate or filename order)
+const recent = docs
+  .filter(d => d.data.spoke != null || d.data.detail != null)
+  .sort((a, b) => {
+    if (a.data.pubDate && b.data.pubDate) return b.data.pubDate.valueOf() - a.data.pubDate.valueOf();
+    return (b.data.spoke ?? b.data.detail ?? '').localeCompare(a.data.spoke ?? a.data.detail ?? '');
+  })
+  .slice(0, 8)
+  .map(d => ({
+    title: d.data.title,
+    url: d.data.url,
+    cluster: d.data.cluster ?? '',
+    spoke: d.data.spoke,
+    detail: d.data.detail,
+    parentPillar: d.data.parent_pillar,
+    parentSpoke: d.data.parent_spoke,
+  } satisfies ArticleEntry));
+
+const articleData: ArticleData = { pillars, spokes, recent };
+---
+
+<Layout title="GEO | Generative Engine Optimization Intelligence Platform">
+  <App articleData={articleData} client:only="react" />
+</Layout>

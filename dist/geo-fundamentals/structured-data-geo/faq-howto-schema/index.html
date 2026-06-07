@@ -1,0 +1,105 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>FAQ &amp; HowTo Schema for AI Extraction | GEO</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="/_astro/_slug_.AhVO0lKw.css"></head> <body class="bg-[#050505] text-white"> <nav style="border-bottom: 1px solid rgba(255,255,255,0.08);"> <div class="max-w-6xl mx-auto px-8 py-5 flex justify-between items-center"> <a href="/" class="flex flex-col items-start leading-none"> <span class="font-display text-white" style="font-size: 0.95rem; letter-spacing: 0.06em; font-weight: 700; line-height: 1.1;">
+Visibility Guide
+</span> <span class="font-serif italic" style="font-size: 0.62rem; color: #A0A0A0; letter-spacing: 0.04em; line-height: 1.3; margin-top: 1px;">
+by NMC Interactive
+</span> </a> <div class="flex gap-8" style="font-size: 0.75rem;"> <a href="/docs" class="nav-link-underline font-mono uppercase tracking-widest text-[#A0A0A0] hover:text-white transition-colors duration-200" style="letter-spacing: 0.12em;">Docs</a> <a href="/sitemap" class="nav-link-underline font-mono uppercase tracking-widest text-[#A0A0A0] hover:text-white transition-colors duration-200" style="letter-spacing: 0.12em;">Sitemap</a> </div> </div> </nav> <div class="max-w-3xl mx-auto px-8 py-16">   <nav class="mb-8 flex items-center gap-2 font-mono text-xs text-[#666666]" style="letter-spacing: 0.08em;"> <a href="/" class="hover:text-white transition-colors">Home</a> <span>/</span>  <a href="/geo-fundamentals/structured-data-geo/" class="hover:text-white transition-colors">GEO Fundamentals</a> <span>/</span>  <span class="text-[#A0A0A0] uppercase">Detail</span> </nav>  <div class="font-mono text-xs uppercase tracking-widest text-[#666666] mb-4" style="letter-spacing: 0.15em;"> GEO Fundamentals </div>  <div class="prose prose-invert prose-lg max-w-none
+    prose-headings:font-sans prose-headings:tracking-tight
+    prose-h1:text-5xl prose-h1:font-bold prose-h1:leading-tight prose-h1:mb-8
+    prose-h2:text-3xl prose-h2:font-semibold prose-h2:mt-12 prose-h2:mb-4
+    prose-h3:text-xl prose-h3:font-semibold prose-h3:mt-8 prose-h3:mb-3
+    prose-p:text-[#EBEBEB] prose-p:leading-relaxed
+    prose-strong:text-white
+    prose-a:text-[#3B82F6] prose-a:no-underline hover:prose-a:underline
+    prose-blockquote:border-l-[#3B82F6] prose-blockquote:text-[#A0A0A0] prose-blockquote:italic
+    prose-code:text-[#3B82F6] prose-code:bg-white/5 prose-code:px-1 prose-code:rounded
+    prose-pre:bg-[#111111] prose-pre:border prose-pre:border-white/10
+    prose-table:text-sm
+    prose-th:text-[#A0A0A0] prose-td:border-white/10 prose-th:border-white/10
+    prose-li:text-[#EBEBEB]
+    prose-hr:border-white/10"> <h1 id="faq--howto-schema-for-ai-extraction">FAQ &#x26; HowTo Schema for AI Extraction</h1>
+<blockquote>
+<p><strong>GEO Preface:</strong> This article covers two of the highest-impact schema types for GEO — FAQPage and HowTo — which explicitly structure content for AI extraction. This detail article is part of our <a href="/geo-fundamentals/structured-data-geo/">Structured Data for GEO</a> spoke within the <a href="/geo-fundamentals/">GEO Fundamentals</a> pillar. For the complete schema guide, see <a href="/geo-fundamentals/structured-data-geo/">Structured Data for GEO</a>. For JSON-LD implementation, read <a href="/geo-fundamentals/structured-data-geo/json-ld-implementation/">JSON-LD Tutorial</a>.</p>
+</blockquote>
+<hr>
+<h2 id="faqpage-schema">FAQPage Schema</h2>
+<p>FAQPage schema explicitly marks up question-and-answer pairs, making them prime candidates for AI extraction and featured snippets.</p>
+<h3 id="why-it-matters-for-geo">Why It Matters for GEO</h3>
+<p>AI platforms frequently answer user questions by extracting Q&#x26;A pairs. FAQPage schema tells AI exactly which text is the question and which is the answer, eliminating ambiguity.</p>
+<h3 id="implementation-example">Implementation Example</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#79B8FF">  "@context"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"https://schema.org"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "@type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"FAQPage"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "mainEntity"</span><span style="color:#E1E4E8">: [</span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#79B8FF">      "@type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Question"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">      "name"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"What is Generative Engine Optimization?"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">      "acceptedAnswer"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#79B8FF">        "@type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Answer"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">        "text"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Generative Engine Optimization (GEO) is the strategic practice of optimizing digital content to be discovered, trusted, and cited by generative AI engines."</span></span>
+<span class="line"><span style="color:#E1E4E8">      }</span></span>
+<span class="line"><span style="color:#E1E4E8">    },</span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#79B8FF">      "@type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Question"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">      "name"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"How does GEO differ from SEO?"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">      "acceptedAnswer"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#79B8FF">        "@type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Answer"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">        "text"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"While SEO focuses on ranking in search results, GEO focuses on being cited in AI-generated answers. Both are complementary disciplines."</span></span>
+<span class="line"><span style="color:#E1E4E8">      }</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">  ]</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre>
+<h3 id="best-practices">Best Practices</h3>
+<ul>
+<li>Include 3-7 Q&#x26;A pairs per page</li>
+<li>Keep answers concise (50-100 words)</li>
+<li>Use natural, conversational language</li>
+<li>Ensure questions reflect actual user queries</li>
+<li>Add FAQ schema to every content page where applicable</li>
+</ul>
+<h2 id="howto-schema">HowTo Schema</h2>
+<p>HowTo schema marks up step-by-step instructions, making them easily extractable by AI for process-oriented queries.</p>
+<h3 id="why-it-matters-for-geo-1">Why It Matters for GEO</h3>
+<p>When users ask “How do I…?” questions, AI platforms look for structured step-by-step content. HowTo schema explicitly defines each step, making extraction seamless.</p>
+<h3 id="implementation-example-1">Implementation Example</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#79B8FF">  "@context"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"https://schema.org"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "@type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"HowTo"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "name"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"How to Implement GEO on Your Website"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "description"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"A step-by-step guide to implementing Generative Engine Optimization."</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "totalTime"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"PT2H"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "step"</span><span style="color:#E1E4E8">: [</span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#79B8FF">      "@type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"HowToStep"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">      "name"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Audit Your Current Content"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">      "text"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Review your existing content to identify GEO optimization opportunities."</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">      "url"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"https://example.com/how-to-geo#step1"</span></span>
+<span class="line"><span style="color:#E1E4E8">    },</span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#79B8FF">      "@type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"HowToStep"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">      "name"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Implement Schema Markup"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">      "text"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Add JSON-LD schema markup to all content pages."</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">      "url"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"https://example.com/how-to-geo#step2"</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">  ]</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre>
+<h3 id="best-practices-1">Best Practices</h3>
+<ul>
+<li>Break processes into clear, sequential steps</li>
+<li>Include estimated time (totalTime property)</li>
+<li>Add images or videos for each step where possible</li>
+<li>Include tools and supplies lists</li>
+<li>Link each step to an anchor on the page</li>
+</ul>
+<hr>
+<h2 id="related-articles">Related Articles</h2>
+<ul>
+<li><a href="/geo-fundamentals/structured-data-geo/">Structured Data for GEO</a> — Parent spoke article</li>
+<li><a href="/geo-fundamentals/structured-data-geo/json-ld-implementation/">JSON-LD Implementation</a> — Tutorial</li>
+<li><a href="/geo-fundamentals/structured-data-geo/organization-person-schema/">Organization &#x26; Person Schema</a> — Entity schemas</li>
+<li><a href="/geo-fundamentals/">GEO Fundamentals Pillar</a> — Complete foundational guide</li>
+</ul> </div>  <div class="mt-16 pt-8" style="border-top: 1px solid rgba(255,255,255,0.08);"> <a href="/geo-fundamentals/structured-data-geo/" class="font-mono text-xs uppercase tracking-widest text-[#A0A0A0] hover:text-white transition-colors" style="letter-spacing: 0.12em;">
+← Back to GEO Fundamentals </a> </div> </div> <footer style="border-top: 1px solid rgba(255,255,255,0.06); padding: 1.5rem 2rem; text-align: center;"> <span class="font-mono text-xs text-[#A0A0A0]" style="letter-spacing: 0.06em;">
+© 2026 NMC Interactive · GEO / SEO
+</span> </footer> </body></html>

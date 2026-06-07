@@ -1,0 +1,101 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>The Complete llms.txt Implementation Guide | GEO</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="/_astro/_slug_.AhVO0lKw.css"></head> <body class="bg-[#050505] text-white"> <nav style="border-bottom: 1px solid rgba(255,255,255,0.08);"> <div class="max-w-6xl mx-auto px-8 py-5 flex justify-between items-center"> <a href="/" class="flex flex-col items-start leading-none"> <span class="font-display text-white" style="font-size: 0.95rem; letter-spacing: 0.06em; font-weight: 700; line-height: 1.1;">
+Visibility Guide
+</span> <span class="font-serif italic" style="font-size: 0.62rem; color: #A0A0A0; letter-spacing: 0.04em; line-height: 1.3; margin-top: 1px;">
+by NMC Interactive
+</span> </a> <div class="flex gap-8" style="font-size: 0.75rem;"> <a href="/docs" class="nav-link-underline font-mono uppercase tracking-widest text-[#A0A0A0] hover:text-white transition-colors duration-200" style="letter-spacing: 0.12em;">Docs</a> <a href="/sitemap" class="nav-link-underline font-mono uppercase tracking-widest text-[#A0A0A0] hover:text-white transition-colors duration-200" style="letter-spacing: 0.12em;">Sitemap</a> </div> </div> </nav> <div class="max-w-3xl mx-auto px-8 py-16">   <nav class="mb-8 flex items-center gap-2 font-mono text-xs text-[#666666]" style="letter-spacing: 0.08em;"> <a href="/" class="hover:text-white transition-colors">Home</a> <span>/</span>  <a href="/geo-fundamentals/technical-foundations-geo/" class="hover:text-white transition-colors">GEO Fundamentals</a> <span>/</span>  <span class="text-[#A0A0A0] uppercase">Detail</span> </nav>  <div class="font-mono text-xs uppercase tracking-widest text-[#666666] mb-4" style="letter-spacing: 0.15em;"> GEO Fundamentals </div>  <div class="prose prose-invert prose-lg max-w-none
+    prose-headings:font-sans prose-headings:tracking-tight
+    prose-h1:text-5xl prose-h1:font-bold prose-h1:leading-tight prose-h1:mb-8
+    prose-h2:text-3xl prose-h2:font-semibold prose-h2:mt-12 prose-h2:mb-4
+    prose-h3:text-xl prose-h3:font-semibold prose-h3:mt-8 prose-h3:mb-3
+    prose-p:text-[#EBEBEB] prose-p:leading-relaxed
+    prose-strong:text-white
+    prose-a:text-[#3B82F6] prose-a:no-underline hover:prose-a:underline
+    prose-blockquote:border-l-[#3B82F6] prose-blockquote:text-[#A0A0A0] prose-blockquote:italic
+    prose-code:text-[#3B82F6] prose-code:bg-white/5 prose-code:px-1 prose-code:rounded
+    prose-pre:bg-[#111111] prose-pre:border prose-pre:border-white/10
+    prose-table:text-sm
+    prose-th:text-[#A0A0A0] prose-td:border-white/10 prose-th:border-white/10
+    prose-li:text-[#EBEBEB]
+    prose-hr:border-white/10"> <h1 id="the-complete-llmstxt-implementation-guide">The Complete llms.txt Implementation Guide</h1>
+<blockquote>
+<p><strong>GEO Preface:</strong> This article provides a comprehensive guide to implementing the llms.txt file — an emerging standard that helps AI crawlers discover and understand your most important content. This detail article is part of our <a href="/geo-fundamentals/technical-foundations-geo/">Technical Foundations</a> spoke within the <a href="/geo-fundamentals/">GEO Fundamentals</a> pillar. For the complete technical guide, see <a href="/geo-fundamentals/technical-foundations-geo/">Technical Foundations</a>. For robots.txt configuration, read the same parent article.</p>
+</blockquote>
+<hr>
+<h2 id="what-is-llmstxt">What Is llms.txt?</h2>
+<p><code>llms.txt</code> is a proposed standard for providing AI assistants with a curated guide to a website’s content. Placed at the root of your domain (e.g., <code>https://example.com/llms.txt</code>), it helps AI models quickly understand what your site offers and find your most important resources.</p>
+<h2 id="why-llmstxt-matters-for-geo">Why llms.txt Matters for GEO</h2>
+<p>While not yet officially adopted by major AI platforms, llms.txt:</p>
+<ul>
+<li>Signals that your brand is AI-forward</li>
+<li>Helps crawlers discover content more efficiently</li>
+<li>Provides context about your brand and offerings</li>
+<li>Creates a machine-readable content directory</li>
+<li>Complements robots.txt and sitemaps</li>
+</ul>
+<h2 id="llmstxt-format">llms.txt Format</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="markdown"><code><span class="line"><span style="color:#79B8FF;font-weight:bold"># Your Brand Name</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">> A brief summary of what your site offers (1-2 sentences).</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Category 1</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> [</span><span style="color:#DBEDFF;text-decoration:underline">Article Title</span><span style="color:#E1E4E8">](</span><span style="color:#E1E4E8;text-decoration:underline">https://example.com/article-url/</span><span style="color:#E1E4E8">) — Brief description</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> [</span><span style="color:#DBEDFF;text-decoration:underline">Article Title</span><span style="color:#E1E4E8">](</span><span style="color:#E1E4E8;text-decoration:underline">https://example.com/article-url/</span><span style="color:#E1E4E8">) — Brief description</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Category 2</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> [</span><span style="color:#DBEDFF;text-decoration:underline">Article Title</span><span style="color:#E1E4E8">](</span><span style="color:#E1E4E8;text-decoration:underline">https://example.com/article-url/</span><span style="color:#E1E4E8">) — Brief description</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> [</span><span style="color:#DBEDFF;text-decoration:underline">Article Title</span><span style="color:#E1E4E8">](</span><span style="color:#E1E4E8;text-decoration:underline">https://example.com/article-url/</span><span style="color:#E1E4E8">) — Brief description</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Optional: Additional Resources</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> [</span><span style="color:#DBEDFF;text-decoration:underline">Resource Name</span><span style="color:#E1E4E8">](</span><span style="color:#E1E4E8;text-decoration:underline">https://example.com/resource/</span><span style="color:#E1E4E8">) — Description</span></span>
+<span class="line"></span></code></pre>
+<h2 id="best-practices">Best Practices</h2>
+<ul>
+<li>Keep descriptions factual, not promotional</li>
+<li>Include 20-50 of your most important links</li>
+<li>Organize by category or topic</li>
+<li>Update regularly as content changes</li>
+<li>Keep descriptions under 100 characters</li>
+<li>Use clear, descriptive link text</li>
+</ul>
+<h2 id="example-implementation">Example Implementation</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="markdown"><code><span class="line"><span style="color:#79B8FF;font-weight:bold"># GEO Insights</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">> Comprehensive resources on Generative Engine Optimization for global and Chinese markets.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Core Guides</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> [</span><span style="color:#DBEDFF;text-decoration:underline">GEO Fundamentals</span><span style="color:#E1E4E8">](</span><span style="color:#E1E4E8;text-decoration:underline">https://example.com/geo-fundamentals/</span><span style="color:#E1E4E8">) — Complete guide to GEO principles</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> [</span><span style="color:#DBEDFF;text-decoration:underline">Chinese AI Ecosystem</span><span style="color:#E1E4E8">](</span><span style="color:#E1E4E8;text-decoration:underline">https://example.com/china-ai-ecosystem/</span><span style="color:#E1E4E8">) — Big Six platform analysis</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> [</span><span style="color:#DBEDFF;text-decoration:underline">World-to-China Playbook</span><span style="color:#E1E4E8">](</span><span style="color:#E1E4E8;text-decoration:underline">https://example.com/world-to-china-geo/</span><span style="color:#E1E4E8">) — Market entry strategies</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> [</span><span style="color:#DBEDFF;text-decoration:underline">China-to-World Strategy</span><span style="color:#E1E4E8">](</span><span style="color:#E1E4E8;text-decoration:underline">https://example.com/china-to-world-geo/</span><span style="color:#E1E4E8">) — Global expansion guide</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Technical Resources</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> [</span><span style="color:#DBEDFF;text-decoration:underline">Structured Data Guide</span><span style="color:#E1E4E8">](</span><span style="color:#E1E4E8;text-decoration:underline">https://example.com/geo-fundamentals/structured-data-geo/</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> [</span><span style="color:#DBEDFF;text-decoration:underline">GEO KPIs Framework</span><span style="color:#E1E4E8">](</span><span style="color:#E1E4E8;text-decoration:underline">https://example.com/geo-fundamentals/geo-kpis-metrics/</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> [</span><span style="color:#DBEDFF;text-decoration:underline">Entity Authority Building</span><span style="color:#E1E4E8">](</span><span style="color:#E1E4E8;text-decoration:underline">https://example.com/geo-fundamentals/entity-authority-geo/</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## About</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> [</span><span style="color:#DBEDFF;text-decoration:underline">About Us</span><span style="color:#E1E4E8">](</span><span style="color:#E1E4E8;text-decoration:underline">https://example.com/about/</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> [</span><span style="color:#DBEDFF;text-decoration:underline">Contact</span><span style="color:#E1E4E8">](</span><span style="color:#E1E4E8;text-decoration:underline">https://example.com/contact/</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"></span></code></pre>
+<h2 id="placement-and-discovery">Placement and Discovery</h2>
+<p>Place <code>llms.txt</code> at the root of your domain:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>https://yourdomain.com/llms.txt</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>Reference it in your robots.txt:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>User-agent: *</span></span>
+<span class="line"><span>Allow: /</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># AI Content Guide</span></span>
+<span class="line"><span># See: https://yourdomain.com/llms.txt</span></span>
+<span class="line"><span></span></span></code></pre>
+<hr>
+<h2 id="related-articles">Related Articles</h2>
+<ul>
+<li><a href="/geo-fundamentals/technical-foundations-geo/">Technical Foundations</a> — Parent spoke article</li>
+<li><a href="/geo-fundamentals/technical-foundations-geo/core-web-vitals/">Core Web Vitals</a> — Speed optimization</li>
+<li><a href="/geo-fundamentals/technical-foundations-geo/mobile-first-geo/">Mobile-First GEO</a> — Mobile design</li>
+<li><a href="/geo-fundamentals/">GEO Fundamentals Pillar</a> — Complete foundational guide</li>
+</ul> </div>  <div class="mt-16 pt-8" style="border-top: 1px solid rgba(255,255,255,0.08);"> <a href="/geo-fundamentals/technical-foundations-geo/" class="font-mono text-xs uppercase tracking-widest text-[#A0A0A0] hover:text-white transition-colors" style="letter-spacing: 0.12em;">
+← Back to GEO Fundamentals </a> </div> </div> <footer style="border-top: 1px solid rgba(255,255,255,0.06); padding: 1.5rem 2rem; text-align: center;"> <span class="font-mono text-xs text-[#A0A0A0]" style="letter-spacing: 0.06em;">
+© 2026 NMC Interactive · GEO / SEO
+</span> </footer> </body></html>

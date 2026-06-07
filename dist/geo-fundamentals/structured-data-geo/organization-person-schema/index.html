@@ -1,0 +1,199 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Organization &amp; Person Schema for Entities | GEO</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="/_astro/_slug_.AhVO0lKw.css"></head> <body class="bg-[#050505] text-white"> <nav style="border-bottom: 1px solid rgba(255,255,255,0.08);"> <div class="max-w-6xl mx-auto px-8 py-5 flex justify-between items-center"> <a href="/" class="flex flex-col items-start leading-none"> <span class="font-display text-white" style="font-size: 0.95rem; letter-spacing: 0.06em; font-weight: 700; line-height: 1.1;">
+Visibility Guide
+</span> <span class="font-serif italic" style="font-size: 0.62rem; color: #A0A0A0; letter-spacing: 0.04em; line-height: 1.3; margin-top: 1px;">
+by NMC Interactive
+</span> </a> <div class="flex gap-8" style="font-size: 0.75rem;"> <a href="/docs" class="nav-link-underline font-mono uppercase tracking-widest text-[#A0A0A0] hover:text-white transition-colors duration-200" style="letter-spacing: 0.12em;">Docs</a> <a href="/sitemap" class="nav-link-underline font-mono uppercase tracking-widest text-[#A0A0A0] hover:text-white transition-colors duration-200" style="letter-spacing: 0.12em;">Sitemap</a> </div> </div> </nav> <div class="max-w-3xl mx-auto px-8 py-16">   <nav class="mb-8 flex items-center gap-2 font-mono text-xs text-[#666666]" style="letter-spacing: 0.08em;"> <a href="/" class="hover:text-white transition-colors">Home</a> <span>/</span>  <a href="/geo-fundamentals/structured-data-geo/" class="hover:text-white transition-colors">GEO Fundamentals</a> <span>/</span>  <span class="text-[#A0A0A0] uppercase">Detail</span> </nav>  <div class="font-mono text-xs uppercase tracking-widest text-[#666666] mb-4" style="letter-spacing: 0.15em;"> GEO Fundamentals </div>  <div class="prose prose-invert prose-lg max-w-none
+    prose-headings:font-sans prose-headings:tracking-tight
+    prose-h1:text-5xl prose-h1:font-bold prose-h1:leading-tight prose-h1:mb-8
+    prose-h2:text-3xl prose-h2:font-semibold prose-h2:mt-12 prose-h2:mb-4
+    prose-h3:text-xl prose-h3:font-semibold prose-h3:mt-8 prose-h3:mb-3
+    prose-p:text-[#EBEBEB] prose-p:leading-relaxed
+    prose-strong:text-white
+    prose-a:text-[#3B82F6] prose-a:no-underline hover:prose-a:underline
+    prose-blockquote:border-l-[#3B82F6] prose-blockquote:text-[#A0A0A0] prose-blockquote:italic
+    prose-code:text-[#3B82F6] prose-code:bg-white/5 prose-code:px-1 prose-code:rounded
+    prose-pre:bg-[#111111] prose-pre:border prose-pre:border-white/10
+    prose-table:text-sm
+    prose-th:text-[#A0A0A0] prose-td:border-white/10 prose-th:border-white/10
+    prose-li:text-[#EBEBEB]
+    prose-hr:border-white/10"> <h1 id="organization--person-schema-for-entities">Organization &#x26; Person Schema for Entities</h1>
+<blockquote>
+<p><strong>GEO Preface:</strong> This article covers Organization and Person schema — the foundation of entity building for GEO. These schema types explicitly define your brand and authors as distinct entities that AI systems can recognize and trust. This detail article is part of our <a href="/geo-fundamentals/structured-data-geo/">Structured Data for GEO</a> spoke within the <a href="/geo-fundamentals/">GEO Fundamentals</a> pillar. For the complete schema guide, see <a href="/geo-fundamentals/structured-data-geo/">Structured Data for GEO</a>. For entity building strategies, read <a href="/geo-fundamentals/entity-authority-geo/">Building Entity Authority</a>.</p>
+</blockquote>
+<hr>
+<h2 id="organization-schema">Organization Schema</h2>
+<p>Organization schema defines your brand as a distinct entity on the web. It is the single most important schema type for entity building.</p>
+<h3 id="implementation">Implementation</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#79B8FF">  "@context"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"https://schema.org"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "@type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Organization"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "name"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Your Company Name"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "alternateName"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Short Name or Brand Name"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "url"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"https://example.com"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "logo"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"https://example.com/logo.png"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "description"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"A concise description of what your company does."</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "foundingDate"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"2015-06-15"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "sameAs"</span><span style="color:#E1E4E8">: [</span></span>
+<span class="line"><span style="color:#9ECBFF">    "https://www.linkedin.com/company/yourcompany"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">    "https://twitter.com/yourcompany"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">    "https://www.facebook.com/yourcompany"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">    "https://en.wikipedia.org/wiki/Your_Company"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">    "https://www.crunchbase.com/organization/your-company"</span></span>
+<span class="line"><span style="color:#E1E4E8">  ],</span></span>
+<span class="line"><span style="color:#79B8FF">  "contactPoint"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#79B8FF">    "@type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"ContactPoint"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">    "contactType"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Customer Service"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">    "email"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"support@example.com"</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre>
+<h3 id="key-properties">Key Properties</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Property</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td><code>name</code></td><td>Yes</td><td>Official company name</td></tr><tr><td><code>url</code></td><td>Yes</td><td>Website URL</td></tr><tr><td><code>logo</code></td><td>Yes</td><td>Logo image URL</td></tr><tr><td><code>sameAs</code></td><td>Highly Recommended</td><td>Links to social profiles and authoritative sources</td></tr><tr><td><code>description</code></td><td>Recommended</td><td>Company description</td></tr><tr><td><code>foundingDate</code></td><td>Recommended</td><td>Date of incorporation</td></tr></tbody></table>
+<h3 id="the-sameas-property">The <code>sameAs</code> Property</h3>
+<p>The <code>sameAs</code> property is critical for GEO. It tells AI systems where else your entity appears on the web, allowing them to consolidate information and verify identity. Include links to:</p>
+<ul>
+<li>LinkedIn company page</li>
+<li>Twitter/X profile</li>
+<li>Facebook page</li>
+<li>Wikipedia entry</li>
+<li>Crunchbase profile</li>
+<li>Industry directories</li>
+<li>Government registration databases</li>
+</ul>
+<h2 id="person-schema">Person Schema</h2>
+<p>Person schema defines content authors as distinct entities, building E-E-A-T signals.</p>
+<h3 id="implementation-1">Implementation</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#79B8FF">  "@context"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"https://schema.org"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "@type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Person"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "name"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Jane Smith"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "jobTitle"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Chief Marketing Officer"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "worksFor"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#79B8FF">    "@type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Organization"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">    "name"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Your Company"</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#79B8FF">  "url"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"https://example.com/authors/jane-smith"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "sameAs"</span><span style="color:#E1E4E8">: [</span></span>
+<span class="line"><span style="color:#9ECBFF">    "https://www.linkedin.com/in/janesmith"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">    "https://twitter.com/janesmith"</span></span>
+<span class="line"><span style="color:#E1E4E8">  ],</span></span>
+<span class="line"><span style="color:#79B8FF">  "alumniOf"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#79B8FF">    "@type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"CollegeOrUniversity"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">    "name"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Stanford University"</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#79B8FF">  "knowsAbout"</span><span style="color:#E1E4E8">: [</span><span style="color:#9ECBFF">"Digital Marketing"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"SEO"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"Generative AI"</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre>
+<h3 id="key-properties-1">Key Properties</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Property</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td><code>name</code></td><td>Yes</td><td>Full name</td></tr><tr><td><code>jobTitle</code></td><td>Recommended</td><td>Professional title</td></tr><tr><td><code>worksFor</code></td><td>Recommended</td><td>Link to Organization</td></tr><tr><td><code>sameAs</code></td><td>Highly Recommended</td><td>Links to professional profiles</td></tr><tr><td><code>alumniOf</code></td><td>Recommended</td><td>Educational background</td></tr><tr><td><code>knowsAbout</code></td><td>Recommended</td><td>Areas of expertise</td></tr></tbody></table>
+<h2 id="connecting-organization-and-person">Connecting Organization and Person</h2>
+<p>Link Organization and Person schemas to create a coherent entity graph:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#79B8FF">  "@context"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"https://schema.org"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "@type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Article"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "headline"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Article Title"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "author"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#79B8FF">    "@type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Person"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">    "name"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Jane Smith"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">    "worksFor"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#79B8FF">      "@type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Organization"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">      "name"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Your Company"</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#79B8FF">  "publisher"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#79B8FF">    "@type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Organization"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">    "name"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Your Company"</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h2 id="related-articles">Related Articles</h2>
+<ul>
+<li><a href="/geo-fundamentals/structured-data-geo/">Structured Data for GEO</a> — Parent spoke article</li>
+<li><a href="/geo-fundamentals/entity-authority-geo/">Building Entity Authority</a> — Entity building strategies</li>
+<li><a href="/geo-fundamentals/structured-data-geo/json-ld-implementation/">JSON-LD Implementation</a> — Tutorial</li>
+<li><a href="/geo-fundamentals/">GEO Fundamentals Pillar</a> — Complete foundational guide</li>
+</ul> </div>  <div class="mt-16 pt-8" style="border-top: 1px solid rgba(255,255,255,0.08);"> <a href="/geo-fundamentals/structured-data-geo/" class="font-mono text-xs uppercase tracking-widest text-[#A0A0A0] hover:text-white transition-colors" style="letter-spacing: 0.12em;">
+← Back to GEO Fundamentals </a> </div> </div> <footer style="border-top: 1px solid rgba(255,255,255,0.06); padding: 1.5rem 2rem; text-align: center;"> <span class="font-mono text-xs text-[#A0A0A0]" style="letter-spacing: 0.06em;">
+© 2026 NMC Interactive · GEO / SEO
+</span> </footer> </body></html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Technical Foundations: Crawlability, Speed &amp; Mobile-First for GEO | GEO</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="/_astro/_slug_.AhVO0lKw.css"></head> <body class="bg-[#050505] text-white"> <nav style="border-bottom: 1px solid rgba(255,255,255,0.08);"> <div class="max-w-6xl mx-auto px-8 py-5 flex justify-between items-center"> <a href="/" class="flex flex-col items-start leading-none"> <span class="font-display text-white" style="font-size: 0.95rem; letter-spacing: 0.06em; font-weight: 700; line-height: 1.1;">
+Visibility Guide
+</span> <span class="font-serif italic" style="font-size: 0.62rem; color: #A0A0A0; letter-spacing: 0.04em; line-height: 1.3; margin-top: 1px;">
+by NMC Interactive
+</span> </a> <div class="flex gap-8" style="font-size: 0.75rem;"> <a href="/docs" class="nav-link-underline font-mono uppercase tracking-widest text-[#A0A0A0] hover:text-white transition-colors duration-200" style="letter-spacing: 0.12em;">Docs</a> <a href="/sitemap" class="nav-link-underline font-mono uppercase tracking-widest text-[#A0A0A0] hover:text-white transition-colors duration-200" style="letter-spacing: 0.12em;">Sitemap</a> </div> </div> </nav> <div class="max-w-3xl mx-auto px-8 py-16">   <nav class="mb-8 flex items-center gap-2 font-mono text-xs text-[#666666]" style="letter-spacing: 0.08em;"> <a href="/" class="hover:text-white transition-colors">Home</a> <span>/</span>  <a href="/geo-fundamentals/" class="hover:text-white transition-colors">GEO Fundamentals</a> <span>/</span>  <span class="text-[#A0A0A0] uppercase">Spoke</span> </nav>  <div class="font-mono text-xs uppercase tracking-widest text-[#666666] mb-4" style="letter-spacing: 0.15em;"> GEO Fundamentals </div>  <div class="prose prose-invert prose-lg max-w-none
+    prose-headings:font-sans prose-headings:tracking-tight
+    prose-h1:text-5xl prose-h1:font-bold prose-h1:leading-tight prose-h1:mb-8
+    prose-h2:text-3xl prose-h2:font-semibold prose-h2:mt-12 prose-h2:mb-4
+    prose-h3:text-xl prose-h3:font-semibold prose-h3:mt-8 prose-h3:mb-3
+    prose-p:text-[#EBEBEB] prose-p:leading-relaxed
+    prose-strong:text-white
+    prose-a:text-[#3B82F6] prose-a:no-underline hover:prose-a:underline
+    prose-blockquote:border-l-[#3B82F6] prose-blockquote:text-[#A0A0A0] prose-blockquote:italic
+    prose-code:text-[#3B82F6] prose-code:bg-white/5 prose-code:px-1 prose-code:rounded
+    prose-pre:bg-[#111111] prose-pre:border prose-pre:border-white/10
+    prose-table:text-sm
+    prose-th:text-[#A0A0A0] prose-td:border-white/10 prose-th:border-white/10
+    prose-li:text-[#EBEBEB]
+    prose-hr:border-white/10"> <h1 id="technical-foundations-crawlability-speed--mobile-first-for-geo">Technical Foundations: Crawlability, Speed &#x26; Mobile-First for GEO</h1>
+<blockquote>
+<p><strong>GEO Preface:</strong> This article covers the essential technical infrastructure requirements for Generative Engine Optimization — the foundational elements that ensure AI crawlers can access, parse, and trust your content. As part of our <a href="/geo-fundamentals/">GEO Fundamentals</a> cluster, this technical guide connects to our <a href="/geo-fundamentals/structured-data-geo/">Structured Data for GEO</a> implementation guide. For the broader strategic context, see our <a href="/geo-fundamentals/">GEO Fundamentals pillar</a>. For China-specific technical requirements including ICP licensing and Baidu optimization, explore our <a href="/world-to-china-geo/">World-to-China GEO</a> cluster, particularly <a href="/world-to-china/icp-license-guide/">ICP License Guide</a> and <a href="/world-to-china/technical-seo-baidu/">Technical SEO for Baidu</a>. For global technical optimization for Google Gemini, see our <a href="/china-to-world-geo/">China-to-World GEO</a> cluster.</p>
+</blockquote>
+<hr>
+<h2 id="the-technical-foundation-of-geo">The Technical Foundation of GEO</h2>
+<p>While content quality and authority are the primary drivers of GEO success, they are built on a technical foundation that must be solid for any optimization efforts to bear fruit. AI crawlers — the automated systems that discover and index web content for AI platforms — have the same fundamental requirements as traditional search engine crawlers, with some additional considerations specific to the AI ecosystem.</p>
+<p>The three pillars of technical GEO are <strong>crawlability</strong> (can AI crawlers find and access your content?), <strong>performance</strong> (can they access it quickly and efficiently?), and <strong>mobile-friendliness</strong> (is your content optimized for the devices most users search on?).</p>
+<h2 id="pillar-1-crawlability">Pillar 1: Crawlability</h2>
+<p>Crawlability is the most fundamental requirement. If AI crawlers cannot access your content, nothing else matters.</p>
+<h3 id="robotstxt-configuration-for-ai-crawlers">Robots.txt Configuration for AI Crawlers</h3>
+<p>The <code>robots.txt</code> file is your primary tool for controlling crawler access. A critical mistake many sites make is blocking AI crawlers that should be allowed.</p>
+<p><strong>Crawlers to Allow:</strong></p>
+<ul>
+<li><code>Googlebot</code> — Google’s crawler (powers Google AI Overviews and Gemini)</li>
+<li><code>Bingbot</code> — Bing’s crawler (powers much of ChatGPT’s search)</li>
+<li><code>OAI-SearchBot</code> — OpenAI’s search crawler</li>
+<li><code>ChatGPT-User</code> — OpenAI’s user-initiated lookup bot</li>
+<li><code>Claude-SearchBot</code> — Anthropic’s search crawler</li>
+<li><code>Claude-User</code> — Anthropic’s user-initiated bot</li>
+<li><code>Baiduspider</code> — Baidu’s crawler (for China market)</li>
+<li><code>Bytespider</code> — ByteDance’s crawler (for Doubao)</li>
+</ul>
+<p><strong>Example robots.txt for GEO:</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>User-agent: *</span></span>
+<span class="line"><span>Allow: /</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>User-agent: GPTBot</span></span>
+<span class="line"><span>Disallow: /</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>User-agent: OAI-SearchBot</span></span>
+<span class="line"><span>Allow: /</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>User-agent: ChatGPT-User</span></span>
+<span class="line"><span>Allow: /</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>User-agent: ClaudeBot</span></span>
+<span class="line"><span>Disallow: /</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>User-agent: Claude-SearchBot</span></span>
+<span class="line"><span>Allow: /</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>User-agent: Claude-User</span></span>
+<span class="line"><span>Allow: /</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Sitemap: https://example.com/sitemap.xml</span></span>
+<span class="line"><span></span></span></code></pre>
+<p><em>Note: This example blocks foundation model training crawlers (GPTBot, ClaudeBot) while allowing search and user-initiated crawlers.</em></p>
+<h3 id="sitemap-strategy">Sitemap Strategy</h3>
+<p>XML sitemaps help crawlers discover your content efficiently.</p>
+<p><strong>Best Practices:</strong></p>
+<ul>
+<li>Maintain separate sitemaps for different content types (articles, FAQs, products)</li>
+<li>Include <code>lastmod</code> dates to signal content freshness</li>
+<li>Set appropriate <code>priority</code> values for your most important pages</li>
+<li>Submit sitemaps through Google Search Console and Baidu Webmaster Tools</li>
+<li>For large sites, use a sitemap index file</li>
+</ul>
+<h3 id="internal-linking-architecture">Internal Linking Architecture</h3>
+<p>Internal links help crawlers navigate your site and understand content relationships.</p>
+<p><strong>GEO Best Practices:</strong></p>
+<ul>
+<li>Use descriptive, entity-focused anchor text (not “click here”)</li>
+<li>Implement the topic cluster model with pillar pages linking to spokes and vice versa</li>
+<li>Ensure every page is reachable within 3 clicks from the homepage</li>
+<li>Use breadcrumb navigation to reinforce content hierarchy</li>
+<li>Add “Related Articles” sections to connect semantically similar content</li>
+</ul>
+<h3 id="the-llmstxt-file">The llms.txt File</h3>
+<p>The <code>llms.txt</code> file is an emerging standard that provides a curated guide for AI models to your website’s most important content.</p>
+<p><strong>Implementation:</strong></p>
+<ul>
+<li>Create a Markdown file at <code>https://example.com/llms.txt</code></li>
+<li>Include an H1 header, a brief summary, and organized sections with links to key resources</li>
+<li>Keep descriptions factual, not promotional</li>
+<li>Include no more than 20-50 high-value links</li>
+<li>Update regularly as content changes</li>
+</ul>
+<p><strong>Example Structure:</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="markdown"><code><span class="line"><span style="color:#79B8FF;font-weight:bold"># GEO Insights</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">> Comprehensive resources on Generative Engine Optimization for global and Chinese markets.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Core Guides</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> [</span><span style="color:#DBEDFF;text-decoration:underline">GEO Fundamentals</span><span style="color:#E1E4E8">](</span><span style="color:#E1E4E8;text-decoration:underline">https://example.com/geo-fundamentals/</span><span style="color:#E1E4E8">) — Complete guide to GEO principles</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> [</span><span style="color:#DBEDFF;text-decoration:underline">Chinese AI Ecosystem</span><span style="color:#E1E4E8">](</span><span style="color:#E1E4E8;text-decoration:underline">https://example.com/china-ai-ecosystem/</span><span style="color:#E1E4E8">) — Big Six platform analysis</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> [</span><span style="color:#DBEDFF;text-decoration:underline">World-to-China Playbook</span><span style="color:#E1E4E8">](</span><span style="color:#E1E4E8;text-decoration:underline">https://example.com/world-to-china-geo/</span><span style="color:#E1E4E8">) — Market entry strategies</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> [</span><span style="color:#DBEDFF;text-decoration:underline">China-to-World Strategy</span><span style="color:#E1E4E8">](</span><span style="color:#E1E4E8;text-decoration:underline">https://example.com/china-to-world-geo/</span><span style="color:#E1E4E8">) — Global expansion guide</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Technical Resources</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> [</span><span style="color:#DBEDFF;text-decoration:underline">Structured Data Guide</span><span style="color:#E1E4E8">](</span><span style="color:#E1E4E8;text-decoration:underline">https://example.com/geo-fundamentals/structured-data-geo/</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> [</span><span style="color:#DBEDFF;text-decoration:underline">GEO KPIs Framework</span><span style="color:#E1E4E8">](</span><span style="color:#E1E4E8;text-decoration:underline">https://example.com/geo-fundamentals/geo-kpis-metrics/</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> [</span><span style="color:#DBEDFF;text-decoration:underline">Entity Authority Building</span><span style="color:#E1E4E8">](</span><span style="color:#E1E4E8;text-decoration:underline">https://example.com/geo-fundamentals/entity-authority-geo/</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## About</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> [</span><span style="color:#DBEDFF;text-decoration:underline">About Us</span><span style="color:#E1E4E8">](</span><span style="color:#E1E4E8;text-decoration:underline">https://example.com/about/</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> [</span><span style="color:#DBEDFF;text-decoration:underline">Contact</span><span style="color:#E1E4E8">](</span><span style="color:#E1E4E8;text-decoration:underline">https://example.com/contact/</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"></span></code></pre>
+<h2 id="pillar-2-performance-page-speed">Pillar 2: Performance (Page Speed)</h2>
+<p>Fast-loading pages are essential for both user experience and crawler efficiency. Slow pages may be partially crawled or deprioritized.</p>
+<h3 id="core-web-vitals-targets">Core Web Vitals Targets</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Metric</th><th>Target</th><th>What It Measures</th></tr></thead><tbody><tr><td>Largest Contentful Paint (LCP)</td><td>&#x3C; 2.5 seconds</td><td>Time for main content to load</td></tr><tr><td>First Input Delay (FID)</td><td>&#x3C; 100 milliseconds</td><td>Time until page becomes interactive</td></tr><tr><td>Cumulative Layout Shift (CLS)</td><td>&#x3C; 0.1</td><td>Visual stability during loading</td></tr></tbody></table>
+<h3 id="speed-optimization-techniques">Speed Optimization Techniques</h3>
+<p><strong>Image Optimization:</strong></p>
+<ul>
+<li>Use modern formats (WebP, AVIF) with fallbacks</li>
+<li>Implement responsive images with <code>srcset</code></li>
+<li>Compress images without visible quality loss</li>
+<li>Use lazy loading for below-the-fold images</li>
+</ul>
+<p><strong>Code Optimization:</strong></p>
+<ul>
+<li>Minify CSS, JavaScript, and HTML</li>
+<li>Remove unused code</li>
+<li>Defer non-critical JavaScript</li>
+<li>Use CSS containment for complex layouts</li>
+</ul>
+<p><strong>Server Optimization:</strong></p>
+<ul>
+<li>Enable Gzip/Brotli compression</li>
+<li>Implement browser caching with appropriate TTLs</li>
+<li>Use a CDN with edge nodes in your target markets</li>
+<li>Optimize Time to First Byte (TTFB) — target &#x3C; 600ms</li>
+</ul>
+<p><strong>Third-Party Scripts:</strong></p>
+<ul>
+<li>Audit and remove unnecessary third-party scripts</li>
+<li>Defer non-essential scripts (analytics, chat widgets)</li>
+<li>Self-host critical fonts and resources</li>
+</ul>
+<h2 id="pillar-3-mobile-first-design">Pillar 3: Mobile-First Design</h2>
+<p>Mobile optimization is non-negotiable. The majority of internet traffic — especially in China — comes from mobile devices, and all major search engines use mobile-first indexing.</p>
+<h3 id="mobile-first-requirements">Mobile-First Requirements</h3>
+<p><strong>Responsive Design:</strong></p>
+<ul>
+<li>Use responsive design that adapts to any screen size</li>
+<li>Design for mobile first, then scale up to desktop</li>
+<li>Ensure touch targets are at least 48×48 pixels</li>
+<li>Use readable font sizes (minimum 16px for body text)</li>
+</ul>
+<p><strong>Mobile Performance:</strong></p>
+<ul>
+<li>Test on real devices, not just emulators</li>
+<li>Optimize for 3G/4G connections, not just WiFi</li>
+<li>Minimize resource requests on mobile</li>
+<li>Use AMP or similar mobile acceleration where appropriate</li>
+</ul>
+<p><strong>Mobile UX:</strong></p>
+<ul>
+<li>Simplify navigation for mobile (hamburger menus, bottom nav)</li>
+<li>Use collapsible sections for long content</li>
+<li>Ensure forms are mobile-friendly</li>
+<li>Test all interactive elements on touch devices</li>
+</ul>
+<h3 id="china-specific-mobile-considerations">China-Specific Mobile Considerations</h3>
+<p>In China, mobile usage is even more dominant:</p>
+<ul>
+<li>Over 99% of Chinese internet users access via mobile</li>
+<li>WeChat is the dominant mobile platform</li>
+<li>Mini-programs (apps within WeChat) are a key mobile strategy</li>
+<li>Baidu uses mobile-first indexing exclusively</li>
+<li>Test on Chinese devices and networks for China-targeted content</li>
+</ul>
+<h2 id="technical-geo-checklist">Technical GEO Checklist</h2>
+<p>Use this checklist to audit your technical GEO foundation:</p>
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" disabled> <code>robots.txt</code> allows all major AI crawlers</li>
+<li class="task-list-item"><input type="checkbox" disabled> <code>llms.txt</code> file is implemented and up-to-date</li>
+<li class="task-list-item"><input type="checkbox" disabled> XML sitemap is submitted to Search Console</li>
+<li class="task-list-item"><input type="checkbox" disabled> Schema markup is implemented on all content pages</li>
+<li class="task-list-item"><input type="checkbox" disabled> Core Web Vitals meet target thresholds</li>
+<li class="task-list-item"><input type="checkbox" disabled> Site loads in under 3 seconds on mobile</li>
+<li class="task-list-item"><input type="checkbox" disabled> Design is fully responsive</li>
+<li class="task-list-item"><input type="checkbox" disabled> Mobile-first indexing is enabled</li>
+<li class="task-list-item"><input type="checkbox" disabled> HTTPS is implemented site-wide</li>
+<li class="task-list-item"><input type="checkbox" disabled> Internal linking follows topic cluster architecture</li>
+<li class="task-list-item"><input type="checkbox" disabled> Breadcrumb navigation is implemented</li>
+<li class="task-list-item"><input type="checkbox" disabled> No broken links or 404 errors</li>
+<li class="task-list-item"><input type="checkbox" disabled> Images are optimized and lazy-loaded</li>
+<li class="task-list-item"><input type="checkbox" disabled> JavaScript is deferred where possible</li>
+<li class="task-list-item"><input type="checkbox" disabled> CDN is configured for target markets</li>
+</ul>
+<hr>
+<h2 id="related-articles">Related Articles</h2>
+<p><strong>In this cluster:</strong></p>
+<ul>
+<li><a href="/geo-fundamentals/">GEO Fundamentals Pillar</a> — The complete foundational guide</li>
+<li><a href="/geo-fundamentals/what-is-geo/">What Is GEO</a> — Introduction to GEO concepts</li>
+<li><a href="/geo-fundamentals/geo-vs-seo/">GEO vs SEO</a> — Key differences</li>
+<li><a href="/geo-fundamentals/geo-kpis-metrics/">GEO KPIs &#x26; Metrics</a> — Performance measurement</li>
+<li><a href="/geo-fundamentals/structured-data-geo/">Structured Data for GEO</a> — Schema implementation</li>
+<li><a href="/geo-fundamentals/entity-authority-geo/">Entity Authority</a> — Building AI-recognized entities</li>
+</ul>
+<p><strong>Other clusters:</strong></p>
+<ul>
+<li><a href="/world-to-china/icp-license-guide/">ICP License Guide</a> — China regulatory requirements</li>
+<li><a href="/world-to-china/technical-seo-baidu/">Technical SEO for Baidu</a> — Baidu-specific optimization</li>
+<li><a href="/china-ai-ecosystem/">Chinese AI Search Ecosystem</a> — Platform landscape</li>
+<li><a href="/world-to-china-geo/">World-to-China GEO</a> — Market entry strategies</li>
+<li><a href="/china-to-world-geo/">China-to-World GEO</a> — Global expansion strategies</li>
+</ul> </div>  <div class="mt-16 pt-8" style="border-top: 1px solid rgba(255,255,255,0.08);"> <a href="/geo-fundamentals/" class="font-mono text-xs uppercase tracking-widest text-[#A0A0A0] hover:text-white transition-colors" style="letter-spacing: 0.12em;">
+← Back to GEO Fundamentals </a> </div> </div> <footer style="border-top: 1px solid rgba(255,255,255,0.06); padding: 1.5rem 2rem; text-align: center;"> <span class="font-mono text-xs text-[#A0A0A0]" style="letter-spacing: 0.06em;">
+© 2026 NMC Interactive · GEO / SEO
+</span> </footer> </body></html>

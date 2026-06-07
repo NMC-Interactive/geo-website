@@ -1,0 +1,72 @@
+---
+import { getCollection } from 'astro:content';
+import DocsLayout from '../layouts/DocsLayout.astro';
+
+export async function getStaticPaths() {
+  const docs = await getCollection('docs');
+  return docs.map(entry => {
+    // url field is like "/geo-fundamentals/what-is-geo/" → slug is "geo-fundamentals/what-is-geo"
+    const slug = entry.data.url.replace(/^\/|\/$/g, '');
+    return {
+      params: { slug },
+      props: { entry },
+    };
+  });
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+// Breadcrumb labels
+const tier = entry.data.pillar != null ? 'Pillar' : entry.data.spoke != null ? 'Spoke' : 'Detail';
+const cluster = entry.data.cluster ?? '';
+const parentUrl = entry.data.parent_pillar ?? entry.data.parent_spoke ?? null;
+---
+
+<DocsLayout title={entry.data.title} description={entry.data.excerpt ?? entry.data.description}>
+  <!-- Breadcrumb -->
+  <nav class="mb-8 flex items-center gap-2 font-mono text-xs text-[#666666]" style="letter-spacing: 0.08em;">
+    <a href="/" class="hover:text-white transition-colors">Home</a>
+    <span>/</span>
+    {parentUrl && (
+      <>
+        <a href={parentUrl} class="hover:text-white transition-colors">{cluster}</a>
+        <span>/</span>
+      </>
+    )}
+    <span class="text-[#A0A0A0] uppercase">{tier}</span>
+  </nav>
+
+  <!-- Cluster label -->
+  <div class="font-mono text-xs uppercase tracking-widest text-[#666666] mb-4" style="letter-spacing: 0.15em;">
+    {cluster}
+  </div>
+
+  <!-- Content -->
+  <div class="prose prose-invert prose-lg max-w-none
+    prose-headings:font-sans prose-headings:tracking-tight
+    prose-h1:text-5xl prose-h1:font-bold prose-h1:leading-tight prose-h1:mb-8
+    prose-h2:text-3xl prose-h2:font-semibold prose-h2:mt-12 prose-h2:mb-4
+    prose-h3:text-xl prose-h3:font-semibold prose-h3:mt-8 prose-h3:mb-3
+    prose-p:text-[#EBEBEB] prose-p:leading-relaxed
+    prose-strong:text-white
+    prose-a:text-[#3B82F6] prose-a:no-underline hover:prose-a:underline
+    prose-blockquote:border-l-[#3B82F6] prose-blockquote:text-[#A0A0A0] prose-blockquote:italic
+    prose-code:text-[#3B82F6] prose-code:bg-white/5 prose-code:px-1 prose-code:rounded
+    prose-pre:bg-[#111111] prose-pre:border prose-pre:border-white/10
+    prose-table:text-sm
+    prose-th:text-[#A0A0A0] prose-td:border-white/10 prose-th:border-white/10
+    prose-li:text-[#EBEBEB]
+    prose-hr:border-white/10">
+    <Content />
+  </div>
+
+  <!-- Next / parent navigation -->
+  {parentUrl && (
+    <div class="mt-16 pt-8" style="border-top: 1px solid rgba(255,255,255,0.08);">
+      <a href={parentUrl} class="font-mono text-xs uppercase tracking-widest text-[#A0A0A0] hover:text-white transition-colors" style="letter-spacing: 0.12em;">
+        ← Back to {cluster}
+      </a>
+    </div>
+  )}
+</DocsLayout>

@@ -2,6 +2,29 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Required Startup Rules
+
+1. Read `PROJECT-MEMORY.md` first.
+2. Check repo-local skills in `skills/` before starting ad hoc work.
+3. Follow the canonical process files in `processes/`.
+4. If `PROJECT-MEMORY.md` changes materially, keep this file aligned with it.
+
+## Canonical Process And Skills Layer
+
+Canonical process files:
+- `processes/index.json`
+- `processes/create-page.json`
+- `processes/deployment.json`
+
+Repo-local skills:
+- `skills/agent-handoff-skill/SKILL.md`
+- `skills/create-page/SKILL.md`
+- `skills/deployment/SKILL.md`
+
+Operational rule:
+- prefer the skills-first approach for page creation, deployment, and handoff workflows
+- only fall back to direct ad hoc execution when no matching repo-local skill exists
+
 ## Project Overview
 
 A 100+ page **GEO (Generative Engine Optimization)** intelligence website covering bidirectional GEO strategy between global and Chinese AI markets. The site is organized around a **Dual-Track** theme: World-to-China and China-to-World.
@@ -13,7 +36,7 @@ A 100+ page **GEO (Generative Engine Optimization)** intelligence website coveri
   src/
     pages/               ← File-based routing (.astro files)
     layouts/             ← Layout.astro (base), DocsLayout.astro (content)
-    content/config.ts    ← Astro Content Collections schema
+    content.config.ts    ← Astro Content Collections schema
     styles/global.css
   astro.config.mjs
   tailwind.config.mjs
@@ -26,13 +49,15 @@ source/app/              ← React/Vite design prototype (reference only)
     components/ui/       ← 40+ shadcn/ui components
   package.json
 
-docs/                    ← Pre-written content (source of truth for copy)
-  articles/
-    pillars/             ← P1–P4 (4 pillar page markdown files)
-    spokes/              ← S1-1 through S4-6 (24 spoke page markdown files)
-    details/             ← D1-1-1 through D4-6-3 (72+ detail page markdown files)
-    SITEMAP.md           ← Full URL map with linking structure
-  report.md              ← Full research report / strategy brief
+  docs/                  ← Design, planning, and editorial reference
+    articles/
+      SITEMAP.md         ← Planned URL map with linking structure
+    master-layout-design.pen
+  src/content/docs/      ← Canonical live content source
+  src/data/bio.json      ← Author identity source
+  PROJECT-MEMORY.md      ← Durable operating memory
+  processes/             ← Canonical workflow definitions
+  skills/                ← Repo-local workflow skills
 ```
 
 ## Commands
@@ -42,6 +67,8 @@ All Astro commands run from the **project root**:
 ```bash
 npm run dev        # Start Astro dev server
 npm run build      # Production build
+npm run validate:site  # Validate build output, sitemap, robots, metadata, and domain
+npm run predeploy  # Build + validate
 npm run preview    # Preview the production build
 ```
 
@@ -56,23 +83,31 @@ npm run preview    # Vite preview
 
 ## Astro Architecture
 
-**Stack**: Astro 4.x + `@astrojs/tailwind` + Tailwind CSS 3.x
+**Stack**: Astro 6.x + React integration + Tailwind CSS 3.x
 
 **Routing**: File-based under `src/pages/`. Current pages:
 - `/` → `src/pages/index.astro`
 - `/sitemap` → `src/pages/sitemap.astro`
-- `/docs` → `src/pages/docs/index.astro`
-- `/docs/fundamentals/what-is-geo` → `src/pages/docs/fundamentals/what-is-geo.astro`
+- `/sitemap.xml` → generated from `src/pages/sitemap.xml.ts`
+- `/robots.txt` → generated from `src/pages/robots.txt.ts`
+- `/llms.txt` → generated from `src/pages/llms.txt.ts`
+- `src/pages/docs/*` routes are legacy redirect surfaces, not the canonical public structure
 
 **Layouts**:
 - `Layout.astro` — base shell (head, body, slot)
-- `DocsLayout.astro` — content pages with nav bar and constrained-width reading area
+- `DocsLayout.astro` — content pages with GEO metadata and article shell
 
-**Content Collections** (`src/content/config.ts`): The `docs` collection schema expects frontmatter with `title`, `url`, `detail?`, `parent_spoke?`, `cluster?`, `description?`, `pubDate?`.
+**Content Collections** (`src/content.config.ts`): The `docs` collection schema is the canonical live content model.
 
-**Design language**: Dark theme (`bg-[#050505]`, `text-white`), zinc-based border/muted palette, large tracking-tight headings (negative `tracking-[-2.5px]` style).
+**Production domain**: `https://geo.nmc-interactive.com`
 
-## Content Architecture (docs/)
+**Cloudflare Pages property**: `geo`
+
+**Publishing rule**:
+- push to `preview` publishes preview
+- push to `main` publishes live
+
+## Content Architecture
 
 The 100-page content hierarchy follows a strict topic-cluster model:
 
@@ -90,9 +125,28 @@ The 100-page content hierarchy follows a strict topic-cluster model:
 
 URL structure follows `/{pillar-slug}/{spoke-slug}/{detail-slug}/`. The complete URL-to-file mapping is in `docs/articles/SITEMAP.md`.
 
-## Design Prototype (source/app/)
+Canonical live route families:
+- `/geo-fundamentals/...`
+- `/china-ai-ecosystem/...`
+- `/world-to-china/...`
+- `/world-to-china-geo/`
+- `/china-to-world/...`
+- `/china-to-world-geo/`
 
-The React/Vite app in `source/app/` is a **reference design** — use it to understand the intended visual design when building Astro pages. Key patterns:
+Sitemap parity rule:
+- keep `docs/articles/SITEMAP.md`
+- `dist/sitemap`
+- `dist/sitemap.xml`
+- `dist/sitemap/index.html`
+in sync whenever page inventory changes
+
+## Design Sources
+
+Primary layout source of truth:
+- `docs/master-layout-design.pen`
+- `DESIGN.md`
+
+The React/Vite app in `source/app/` is a secondary reference design, not the primary layout authority. Key patterns:
 
 - **Bilingual**: `LanguageContext.tsx` holds all EN/ZH strings via a `t(key)` function. When building Astro pages, replicate this i18n approach appropriate to Astro's i18n patterns.
 - **Sections**: `Navigation`, `HeroSection`, `CoreThesisSection`, `ArticleIndexSection`, `InsightsArchiveSection`, `LLMConstellation` (Three.js WebGL), `FooterSection`
@@ -104,3 +158,21 @@ The React/Vite app in `source/app/` is a **reference design** — use it to unde
 **GEO** (Generative Engine Optimization) targets AI citations rather than search rankings. Core KPIs: Citation Rate, Share of Model (SoM), AI-Referred Traffic. The site's thesis is that content must be structured for "extractability" by LLMs.
 
 **China AI "Big Six"** referenced throughout the content: Doubao (ByteDance), DeepSeek, Qwen (Alibaba), Kimi (Moonshot), Yuanbao (Tencent), Baidu AI/Ernie Bot.
+
+## Mandatory Page Creation Rule
+
+New pages must be GEO-planned before implementation.
+
+Minimum expectations:
+- clear retrieval intent
+- canonical cluster placement
+- entity-aware framing
+- answer-ready structure
+- source and citation planning
+- visible trust and authorship strategy
+- internal linking plan
+- metadata and schema readiness
+
+Default author workflow:
+- use `src/data/bio.json`
+- default to `River Ho` unless a different author is intentionally added

@@ -1,11 +1,20 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import DocsLayout from '../layouts/DocsLayout.astro';
+import { clusterImage } from '../types/articles';
+import {
+  buildArticleJsonLd,
+  estimateReadTime,
+  extractSummary,
+  formatDate,
+  getSchemaTypes,
+  inferEntities,
+} from '../utils/article-content';
+import { getAuthorById, ORGANIZATION_NAME } from '../utils/site';
 
 export async function getStaticPaths() {
   const docs = await getCollection('docs');
-  return docs.map(entry => {
-    // url field is like "/geo-fundamentals/what-is-geo/" → slug is "geo-fundamentals/what-is-geo"
+  return docs.map((entry) => {
     const slug = entry.data.url.replace(/^\/|\/$/g, '');
     return {
       params: { slug },
@@ -15,16 +24,74 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
-const { Content } = await entry.render();
+const allDocs = await getCollection('docs');
+const { Content } = await render(entry);
 
-// Breadcrumb labels
 const tier = entry.data.pillar != null ? 'Pillar' : entry.data.spoke != null ? 'Spoke' : 'Detail';
 const cluster = entry.data.cluster ?? '';
 const parentUrl = entry.data.parent_pillar ?? entry.data.parent_spoke ?? null;
+const author = getAuthorById(entry.data.author);
+const authorArticle = author?.articles?.find((article) => article.url === entry.data.url);
+const description = entry.data.description ?? entry.data.excerpt ?? entry.data.summary ?? extractSummary(entry.body, entry.data.title);
+const summary = entry.data.summary ?? entry.data.excerpt ?? description;
+const readTime = entry.data.readTime ?? estimateReadTime(entry.body);
+const publishedDate = formatDate(entry.data.pubDate) ?? authorArticle?.published;
+const updatedDate = formatDate(entry.data.updatedDate) ?? authorArticle?.updated;
+const image = entry.data.image ?? clusterImage(entry.data.cluster);
+const entities = (entry.data.entities?.length ? entry.data.entities : inferEntities(entry)).slice(0, 8);
+const sources = entry.data.sources ?? [];
+const faq = entry.data.faq ?? [];
+const schemaTypes = getSchemaTypes(entry, faq.length > 0);
+const canonicalUrl = Astro.site ? new URL(entry.data.url, Astro.site).href : entry.data.url;
+const jsonLd = buildArticleJsonLd({
+  entry,
+  description,
+  canonicalUrl,
+  imageUrl: Astro.site ? new URL(image, Astro.site).href : image,
+  published: publishedDate,
+  updated: updatedDate,
+  faq,
+});
+
+function relatedScore(candidate: (typeof allDocs)[number]) {
+  if (candidate.id === entry.id) return -1;
+  let score = 0;
+  if (candidate.data.cluster === cluster) score += 2;
+  if (candidate.data.parent_spoke && candidate.data.parent_spoke === entry.data.url) score += 6;
+  if (entry.data.parent_spoke && candidate.data.parent_spoke === entry.data.parent_spoke) score += 5;
+  if (candidate.data.parent_pillar && candidate.data.parent_pillar === entry.data.url) score += 4;
+  if (entry.data.parent_pillar && candidate.data.parent_pillar === entry.data.parent_pillar) score += 3;
+  if (parentUrl && candidate.data.url === parentUrl) score += 2;
+  if (parentUrl && candidate.data.parent_pillar === parentUrl) score += 1;
+  if (parentUrl && candidate.data.parent_spoke === parentUrl) score += 1;
+  return score;
+}
+
+const relatedEntries = allDocs
+  .filter((candidate) => candidate.id !== entry.id)
+  .map((candidate) => ({ candidate, score: relatedScore(candidate) }))
+  .filter((item) => item.score > 0)
+  .sort((a, b) => b.score - a.score || a.candidate.data.url.localeCompare(b.candidate.data.url))
+  .slice(0, 4)
+  .map((item) => item.candidate);
+
+const trustSignals = [
+  'Author verified',
+  updatedDate ? `Updated ${updatedDate}` : 'Canonical article',
+  'In tutorials index',
+  'Organization entity',
+  sources.length > 0 ? 'Primary sources logged' : 'Source layer enabled',
+  faq.length > 0 ? 'FAQ schema ready' : 'Answer-ready summary',
+];
 ---
 
-<DocsLayout title={entry.data.title} description={entry.data.excerpt ?? entry.data.description}>
-  <!-- Breadcrumb -->
+<DocsLayout
+  title={entry.data.title}
+  description={description}
+  canonical={entry.data.url}
+  image={image}
+  structuredData={jsonLd}
+>
   <nav class="mb-8 flex items-center gap-2 font-mono text-xs text-[#666666]" style="letter-spacing: 0.08em;">
     <a href="/" class="hover:text-white transition-colors">Home</a>
     <span>/</span>
@@ -37,15 +104,67 @@ const parentUrl = entry.data.parent_pillar ?? entry.data.parent_spoke ?? null;
     <span class="text-[#A0A0A0] uppercase">{tier}</span>
   </nav>
 
-  <!-- Cluster label -->
-  <div class="font-mono text-xs uppercase tracking-widest text-[#666666] mb-4" style="letter-spacing: 0.15em;">
-    {cluster}
-  </div>
+  <header class="space-y-5">
+    <div class="font-mono text-xs uppercase tracking-widest text-[#3B82F6]" style="letter-spacing: 0.15em;">
+      {cluster}
+    </div>
+    <h1 class="text-5xl font-extrabold leading-tight tracking-[-0.04em] md:text-6xl">{entry.data.title}</h1>
+    <div class="flex flex-wrap items-center gap-4 font-mono text-[11px] uppercase tracking-[0.12em] text-[#666666]">
+      {updatedDate && <span>Updated {updatedDate}</span>}
+      <span>{readTime}</span>
+      <span>By {author.name}</span>
+    </div>
+    <p class="max-w-3xl text-lg italic leading-8 text-[#A0A0A0]">{summary}</p>
+  </header>
 
-  <!-- Content -->
-  <div class="prose prose-invert prose-lg max-w-none
+  <section class="mt-8 space-y-4 border border-[#3B82F633] bg-[#0B1220] p-5">
+    <div class="font-mono text-[11px] uppercase tracking-[0.18em] text-[#60A5FA]">GEO Essentials</div>
+    <div class="flex flex-wrap gap-2">
+      {trustSignals.map((item) => (
+        <span class="rounded-full border border-[#3B82F633] bg-[#111A2A] px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.08em] text-[#D7E6FF]">
+          {item}
+        </span>
+      ))}
+    </div>
+  </section>
+
+  <section class="mt-4 space-y-4 border border-[#3B82F622] bg-[#0E141F] p-5">
+    <div class="font-mono text-[11px] uppercase tracking-[0.18em] text-[#60A5FA]">Answer-Ready Summary</div>
+    <p class="max-w-3xl text-[15px] leading-7 text-[#D3D7DF]">{summary}</p>
+    <div class="flex flex-wrap gap-2">
+      {['Definition-first', 'Entity-driven', 'Citation-oriented'].map((item) => (
+        <span class="rounded-full border border-[#3B82F633] bg-[#111A2A] px-3 py-1.5 font-mono text-[11px] text-[#D7E6FF]">
+          {item}
+        </span>
+      ))}
+    </div>
+  </section>
+
+  <section class="mt-4 border border-white/10 bg-[#080D14] p-5">
+    <div class="font-mono text-[11px] uppercase tracking-[0.18em] text-[#A0A0A0]">Publishing Signals</div>
+    <div class="mt-4 grid gap-3 md:grid-cols-2">
+      {[
+        ['Canonical URL', entry.data.url],
+        ['Author', author.name],
+        ['Read Time', readTime],
+        ['Schema', schemaTypes],
+        publishedDate ? ['Published', publishedDate] : null,
+        updatedDate ? ['Updated', updatedDate] : null,
+      ]
+        .filter(Boolean)
+        .map((item) => (
+          <div class="border border-white/10 bg-white/[0.03] p-4">
+            <div class="font-mono text-[10px] uppercase tracking-[0.12em] text-[#7B8598]">{item![0]}</div>
+            <div class="mt-2 break-all text-sm font-semibold text-[#F3F4F6]">{item![1]}</div>
+          </div>
+        ))}
+    </div>
+  </section>
+
+  <div
+    class="prose prose-invert prose-lg mt-12 max-w-none
+    prose-h1:hidden
     prose-headings:font-sans prose-headings:tracking-tight
-    prose-h1:text-5xl prose-h1:font-bold prose-h1:leading-tight prose-h1:mb-8
     prose-h2:text-3xl prose-h2:font-semibold prose-h2:mt-12 prose-h2:mb-4
     prose-h3:text-xl prose-h3:font-semibold prose-h3:mt-8 prose-h3:mb-3
     prose-p:text-[#EBEBEB] prose-p:leading-relaxed
@@ -61,7 +180,117 @@ const parentUrl = entry.data.parent_pillar ?? entry.data.parent_spoke ?? null;
     <Content />
   </div>
 
-  <!-- Next / parent navigation -->
+  <section class="mt-12">
+    <div class="mb-4 text-[11px] uppercase tracking-[0.18em] text-[#A0A0A0]">Primary Sources & Citation Framework</div>
+    <div class="space-y-3">
+      {sources.length > 0 ? (
+        sources.map((source) => (
+          <a href={source.url} class="block border border-white/10 bg-[#0A0A0A] p-4 hover:border-blue-400/50 transition-colors">
+            <div class="font-semibold text-white">{source.label}</div>
+            <div class="mt-1 font-mono text-[11px] uppercase tracking-[0.12em] text-[#666666]">
+              {source.type ?? 'Source'} · {source.url}
+            </div>
+          </a>
+        ))
+      ) : (
+        <div class="border border-white/10 bg-[#0A0A0A] p-4 text-sm leading-7 text-[#C4C4C4]">
+          Source slots are enabled for this tutorial template. Article-level source records can now be added through frontmatter without changing the layout.
+        </div>
+      )}
+    </div>
+  </section>
+
+  <section class="mt-12">
+    <h2 class="text-3xl font-semibold tracking-tight">Entity Coverage & Retrieval Targets</h2>
+    <p class="mt-3 max-w-3xl text-[15px] leading-7 text-[#C4C4C4]">
+      This page exposes its core entities explicitly so both readers and retrieval systems can recognize the concepts, platforms, and optimization targets it is designed to connect.
+    </p>
+    <div class="mt-5 flex flex-wrap gap-2">
+      {entities.map((entity) => (
+        <span class="rounded-full border border-white/10 bg-[#0A0A0A] px-3 py-2 font-mono text-[11px] text-[#D4D4D8]">
+          {entity}
+        </span>
+      ))}
+    </div>
+  </section>
+
+  <section class="mt-12 border border-white/10 bg-[#0A0A0A] p-5">
+    <div class="font-mono text-[11px] uppercase tracking-[0.18em] text-[#A0A0A0]">Author & Editorial Standard</div>
+    <h2 class="mt-3 text-3xl font-semibold tracking-tight">{author.name}</h2>
+    <p class="mt-3 max-w-3xl text-[15px] leading-7 text-[#C4C4C4]">{author.bio}</p>
+
+    <div class="mt-5 flex flex-wrap gap-3">
+      {Object.values(author.profiles).map((profile) => (
+        <a
+          href={profile.url}
+          class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 py-2 font-mono text-[11px] text-[#DCE8FF] hover:border-blue-400/60 transition-colors"
+        >
+          <span class="text-[#60A5FA]">{profile.label === 'LinkedIn' ? 'in' : profile.label === 'GitHub' ? 'gh' : 'X'}</span>
+          <span>{profile.label}</span>
+        </a>
+      ))}
+    </div>
+
+    <div class="mt-5 grid gap-3 md:grid-cols-3">
+      <div class="border border-white/10 bg-white/[0.03] p-4">
+        <div class="font-mono text-[10px] uppercase tracking-[0.12em] text-[#666666]">Coverage</div>
+        <div class="mt-2 text-sm font-semibold text-white">{author.coverage.join(' + ')}</div>
+      </div>
+      <div class="border border-white/10 bg-white/[0.03] p-4">
+        <div class="font-mono text-[10px] uppercase tracking-[0.12em] text-[#666666]">Review Cadence</div>
+        <div class="mt-2 text-sm font-semibold text-white">{author.reviewCadence}</div>
+      </div>
+      <div class="border border-white/10 bg-white/[0.03] p-4">
+        <div class="font-mono text-[10px] uppercase tracking-[0.12em] text-[#666666]">Trust Signal</div>
+        <div class="mt-2 text-sm font-semibold text-white">{author.trustSignals.join(' + ')}</div>
+      </div>
+    </div>
+  </section>
+
+  {faq.length > 0 && (
+    <section class="mt-12">
+      <h2 class="text-3xl font-semibold tracking-tight">Quick Answers For Search & AI Retrieval</h2>
+      <p class="mt-3 max-w-3xl text-[15px] leading-7 text-[#C4C4C4]">
+        These short answer blocks provide retrieval-friendly phrasing and also power FAQ schema for engines that support it.
+      </p>
+      <div class="mt-5 space-y-3">
+        {faq.map((item) => (
+          <div class="border border-white/10 bg-[#0A0A0A] p-4">
+            <div class="text-lg font-semibold text-white">{item.question}</div>
+            <p class="mt-2 text-sm leading-7 text-[#C7CBD4]">{item.answer}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  )}
+
+  <section class="mt-8 flex flex-wrap gap-3 border border-[#3B82F622] bg-[#071018] p-4">
+    <span class="rounded-full bg-white/[0.04] px-3 py-1.5 font-mono text-[11px] text-[#C9D7F0]">Publisher: {ORGANIZATION_NAME}</span>
+    <span class="rounded-full bg-white/[0.04] px-3 py-1.5 font-mono text-[11px] text-[#C9D7F0]">Editorial standard available</span>
+    <a href="mailto:contact@nmc-interactive.com" class="rounded-full bg-white/[0.04] px-3 py-1.5 font-mono text-[11px] text-[#C9D7F0] hover:text-white">
+      Contact pathway for corrections
+    </a>
+  </section>
+
+  {relatedEntries.length > 0 && (
+    <section class="mt-12 border-t border-white/10 pt-8">
+      <div class="font-mono text-[11px] uppercase tracking-[0.18em] text-[#A0A0A0]">Related Tutorials In This Cluster</div>
+      <div class="mt-5 divide-y divide-white/10">
+        {relatedEntries.map((related) => (
+          <a href={related.data.url} class="flex items-center justify-between gap-4 py-4 hover:text-blue-400 transition-colors">
+            <div>
+              <div class="text-lg font-medium text-white">{related.data.title}</div>
+              <div class="mt-1 font-mono text-[11px] uppercase tracking-[0.12em] text-[#666666]">
+                {related.data.spoke ?? related.data.detail ?? `Pillar ${related.data.pillar}`} · {related.data.url}
+              </div>
+            </div>
+            <span class="font-mono text-xs uppercase tracking-[0.12em] text-[#666666]">Open</span>
+          </a>
+        ))}
+      </div>
+    </section>
+  )}
+
   {parentUrl && (
     <div class="mt-16 pt-8" style="border-top: 1px solid rgba(255,255,255,0.08);">
       <a href={parentUrl} class="font-mono text-xs uppercase tracking-widest text-[#A0A0A0] hover:text-white transition-colors" style="letter-spacing: 0.12em;">

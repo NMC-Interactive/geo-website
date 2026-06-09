@@ -101,6 +101,9 @@ Despite their differences, SEO and GEO are highly complementary disciplines that
 **In this cluster:**
 - [GEO Fundamentals Pillar](/geo-fundamentals/) — The complete foundational guide
 - [What Is GEO](/geo-fundamentals/what-is-geo/) — Introduction to GEO concepts
+- [Rankings vs Citations](/geo-fundamentals/geo-vs-seo/rankings-vs-citations/) — The core shift from SERPs to answer citations
+- [Keywords vs Entities](/geo-fundamentals/geo-vs-seo/keywords-vs-entities/) — How AI systems interpret meaning differently
+- [SEO & GEO Synergy](/geo-fundamentals/geo-vs-seo/seo-geo-synergy/) — Running both visibility systems in parallel
 - [GEO KPIs & Metrics](/geo-fundamentals/geo-kpis-metrics/) — Measuring AI search performance
 - [Structured Data for GEO](/geo-fundamentals/structured-data-geo/) — Schema markup implementation
 - [Entity Authority](/geo-fundamentals/entity-authority-geo/) — Building AI-recognized entities

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, useCallback } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useLanguage } from '@/contexts/LanguageContext'
 import LanguageSwitcher from './LanguageSwitcher'
 import { Menu, X } from 'lucide-react'
@@ -15,26 +15,11 @@ export default function Navigation() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const scrollToSection = useCallback((label: string) => {
-    const sectionMap: Record<string, string> = {
-      GEO: '#article-index',
-      SEO: '#insights',
-      Insights: '#insights',
-      Contact: '#footer',
-    }
-    const targetId = sectionMap[label]
-    if (targetId) {
-      const el = document.querySelector(targetId)
-      if (el) el.scrollIntoView({ behavior: 'smooth' })
-    }
-    setMobileOpen(false)
-  }, [])
-
   const navItems = [
-    { key: 'nav.geo', action: 'GEO' },
-    { key: 'nav.seo', action: 'SEO' },
-    { key: 'nav.insights', action: 'Insights' },
-    { key: 'nav.contact', action: 'Contact' },
+    { key: 'nav.geo', href: '/geo-fundamentals/' },
+    { key: 'nav.seo', href: '/geo-fundamentals/geo-vs-seo/' },
+    { key: 'nav.tutorials', href: '/sitemap/' },
+    { key: 'nav.contact', href: '#footer' },
   ]
 
   return (
@@ -59,14 +44,14 @@ export default function Navigation() {
 
         <div className="hidden items-center gap-6 md:flex">
           {navItems.map((item) => (
-            <button
+            <a
               key={item.key}
-              onClick={() => scrollToSection(item.action)}
+              href={item.href}
               className="nav-link-underline font-mono text-xs uppercase tracking-widest text-[#A0A0A0] transition-colors duration-200 hover:text-white"
               style={{ letterSpacing: '0.12em' }}
             >
               {t(item.key) as string}
-            </button>
+            </a>
           ))}
           <LanguageSwitcher />
         </div>
@@ -87,14 +72,15 @@ export default function Navigation() {
           style={{ background: 'rgba(5,5,5,0.95)', backdropFilter: 'blur(12px)' }}
         >
           {navItems.map((item) => (
-            <button
+            <a
               key={item.key}
-              onClick={() => scrollToSection(item.action)}
+              href={item.href}
+              onClick={() => setMobileOpen(false)}
               className="text-left font-mono text-sm uppercase tracking-widest text-[#A0A0A0] transition-colors duration-200 hover:text-white"
               style={{ letterSpacing: '0.12em', padding: '8px 0' }}
             >
               {t(item.key) as string}
-            </button>
+            </a>
           ))}
           <LanguageSwitcher mobile />
         </div>

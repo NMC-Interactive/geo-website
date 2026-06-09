@@ -1,0 +1,53 @@
+{
+  "authors": [
+    {
+      "id": "river-ho",
+      "name": "River Ho",
+      "role": "Founder and Publisher",
+      "organization": "NMC Interactive",
+      "bio": "River Ho writes and reviews tutorial-format articles for decision-makers and practitioners working across GEO, SEO, AI visibility, and China market discovery. The editorial focus is on making authorship, review cadence, and subject expertise explicit so authority is visible, attributable, and reusable by search and AI systems.",
+      "coverage": [
+        "GEO",
+        "SEO",
+        "AI visibility",
+        "China market discovery"
+      ],
+      "reviewCadence": "Quarterly or on material platform change",
+      "trustSignals": [
+        "Named editor",
+        "Dated updates",
+        "Source log",
+        "Visible social identity"
+      ],
+      "profiles": {
+        "x": {
+          "label": "X",
+          "url": "https://x.com/riverho",
+          "icon": "twitter"
+        },
+        "linkedin": {
+          "label": "LinkedIn",
+          "url": "https://www.linkedin.com/in/riverho/",
+          "icon": "linkedin"
+        },
+        "github": {
+          "label": "GitHub",
+          "url": "https://github.com/riverho",
+          "icon": "github"
+        }
+      },
+      "articles": [
+        {
+          "title": "What Is Generative Engine Optimization (GEO)?",
+          "url": "/geo-fundamentals/what-is-geo/",
+          "cluster": "GEO Fundamentals",
+          "spoke": "S1-1",
+          "sourcePath": "src/content/docs/spokes/S1-1-what-is-geo.md",
+          "status": "example-article-for-pencil-geo-template",
+          "published": "2026-06-01",
+          "updated": "2026-06-09"
+        }
+      ]
+    }
+  ]
+}

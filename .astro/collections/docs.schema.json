@@ -1,0 +1,129 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "cluster": {
+      "type": "string"
+    },
+    "pillar": {
+      "type": "number"
+    },
+    "related_pillars": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "related_spokes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "spoke": {
+      "type": "string"
+    },
+    "parent_pillar": {
+      "type": "string"
+    },
+    "detail": {
+      "type": "string"
+    },
+    "parent_spoke": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "excerpt": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "pubDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updatedDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "author": {
+      "type": "string"
+    },
+    "image": {
+      "type": "string"
+    },
+    "featured": {
+      "type": "boolean"
+    },
+    "readTime": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "entities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "label",
+          "url"
+        ]
+      }
+    },
+    "faq": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "question": {
+            "type": "string"
+          },
+          "answer": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "question",
+          "answer"
+        ]
+      }
+    },
+    "$schema": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "title",
+    "url"
+  ]
+}

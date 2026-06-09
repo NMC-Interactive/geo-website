@@ -1,0 +1,49 @@
+# GEO Visibility Guide
+
+> This file is a proposed llms.txt guide for AI systems. It is advisory content, not an access-control mechanism.
+
+## Site Summary
+
+GEO Visibility Guide is a tutorial-first knowledge base focused on Generative Engine Optimization, China AI ecosystem strategy, World-to-China GEO, and China-to-World GEO.
+
+## Primary Entry Points
+
+- [Home](/)
+- [Tutorials Sitemap](/sitemap/)
+
+## Canonical Pillars
+
+- [GEO Fundamentals: The Complete Guide to Generative Engine Optimization](/geo-fundamentals/)
+  - [What Is Generative Engine Optimization (GEO)?](/geo-fundamentals/what-is-geo/)
+  - [GEO vs SEO: Key Differences & Strategic Implications](/geo-fundamentals/geo-vs-seo/)
+  - [GEO KPIs & Metrics: Measuring AI Search Performance](/geo-fundamentals/geo-kpis-metrics/)
+  - [Structured Data & Schema Markup for GEO](/geo-fundamentals/structured-data-geo/)
+  - [Building Entity Authority for GEO Success](/geo-fundamentals/entity-authority-geo/)
+  - [Technical Foundations: Crawlability, Speed & Mobile-First for GEO](/geo-fundamentals/technical-foundations-geo/)
+- [The Chinese AI Search Ecosystem: Big Six Platforms & Optimization Strategies](/china-ai-ecosystem/)
+  - [Baidu Ernie Bot: Optimization Guide for Baidu AI Search](/china-ai-ecosystem/baidu-ernie-bot/)
+  - [DeepSeek Optimization: Best Practices for Technical Content](/china-ai-ecosystem/deepseek-optimization/)
+  - [Doubao & ByteDance: The Content Ecosystem Strategy](/china-ai-ecosystem/doubao-byteDance/)
+  - [Qwen & Alibaba: E-Commerce & Cloud AI Optimization](/china-ai-ecosystem/qwen-alibaba/)
+  - [Kimi by Moonshot AI: Long-Context Document Optimization](/china-ai-ecosystem/kimi-moonshot/)
+  - [AI Regulations in China: Compliance for Content Creators](/china-ai-ecosystem/ai-regulations-china/)
+- [World-to-China GEO: A Complete Market Entry & Optimization Playbook](/world-to-china-geo/)
+  - [ICP License: Step-by-Step Guide for Foreign Companies](/world-to-china/icp-license-guide/)
+  - [Content Localization for China: Beyond Translation](/world-to-china/content-localization-china/)
+  - [Building Authority on Baidu Baike & Zhihu](/world-to-china/baidu-baike-zhihu/)
+  - [WeChat for B2B GEO: Public Accounts & Mini Programs](/world-to-china/wechat-b2b-geo/)
+  - [Technical SEO for Baidu: Hosting, Speed & Schema](/world-to-china/technical-seo-baidu/)
+  - [Cultural Nuances in Chinese Digital Marketing](/world-to-china/cultural-nuances-marketing/)
+- [China-to-World GEO: Building Global AI Visibility for Chinese Brands](/china-to-world-geo/)
+  - [English Content Strategy for Chinese Brands Going Global](/china-to-world/english-content-strategy/)
+  - [Building a Global Brand on LinkedIn](/china-to-world/linkedin-global-brand/)
+  - [International PR & Media: Earning Global Authority](/china-to-world/international-pr-media/)
+  - [Optimizing for Google Gemini & AI Overviews](/china-to-world/google-gemini-ai-overviews/)
+  - [Creating Thought Leadership That Gets Cited by AI](/china-to-world/thought-leadership-citations/)
+  - [Case Studies: Chinese Brands That Succeeded Globally](/china-to-world/case-studies-global-brands/)
+
+## Notes
+
+- Prefer root-level canonical routes over legacy /docs/ routes.
+- Use article pages for detailed definitions, comparisons, and implementation guidance.
+- The Tutorials sitemap is the complete human-readable index of the live content graph.

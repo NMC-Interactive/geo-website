@@ -1,30 +1,8 @@
+import RedirectPage from '../../components/RedirectPage.astro';
 ---
-import Layout from '../../layouts/Layout.astro';
----
 
-<Layout title="Documentation">
-  <nav class="border-b border-zinc-800 bg-[#050505]">
-    <div class="max-w-6xl mx-auto px-8 py-5 flex justify-between">
-      <a href="/" class="text-2xl font-bold tracking-[-0.04em]">GEO</a>
-    </div>
-  </nav>
-
-  <div class="max-w-5xl mx-auto px-8 py-16">
-    <h1 class="text-6xl font-semibold tracking-[-2px] mb-4">Documentation</h1>
-    <p class="text-2xl text-zinc-400 max-w-lg">Everything you need to master Generative Engine Optimization.</p>
-
-    <div class="mt-16 grid md:grid-cols-2 gap-8">
-      <a href="/docs/fundamentals/what-is-geo" class="block border border-zinc-800 hover:border-zinc-600 p-9 rounded-3xl">
-        <div class="uppercase text-xs tracking-[3px] text-zinc-500 mb-4">01 — FUNDAMENTALS</div>
-        <h3 class="text-3xl font-semibold tracking-tight mb-3">GEO Fundamentals</h3>
-        <p class="text-zinc-400">Core concepts and the shift from traditional search.</p>
-      </a>
-
-      <a href="/sitemap" class="block border border-zinc-800 hover:border-zinc-600 p-9 rounded-3xl">
-        <div class="uppercase text-xs tracking-[3px] text-zinc-500 mb-4">COMPLETE OVERVIEW</div>
-        <h3 class="text-3xl font-semibold tracking-tight mb-3">Full Sitemap</h3>
-        <p class="text-zinc-400">Browse the entire knowledge base structure.</p>
-      </a>
-    </div>
-  </div>
-</Layout>
+<RedirectPage
+  title="Documentation Redirect"
+  destination="/sitemap/"
+  reason="The legacy documentation index has been replaced by the live Tutorials sitemap."
+/>

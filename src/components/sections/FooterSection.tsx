@@ -9,6 +9,40 @@ export default function FooterSection() {
   const { t } = useLanguage()
   const sectionRef = useRef<HTMLDivElement>(null)
   const headingRef = useRef<HTMLDivElement>(null)
+  const footerColumns = [
+    {
+      col: 'footer.col.platform',
+      links: [
+        { key: 'footer.link.geo', href: '/world-to-china-geo/' },
+        { key: 'footer.link.seo', href: '#' },
+        { key: 'footer.link.content', href: '#' },
+      ],
+    },
+    {
+      col: 'footer.col.resources',
+      links: [
+        { key: 'footer.link.docs', href: '/sitemap/' },
+        { key: 'footer.link.cases', href: '/china-to-world/case-studies-global-brands/' },
+        { key: 'footer.link.blog', href: '#' },
+        { key: 'footer.link.sitemap', href: '/sitemap/' },
+      ],
+    },
+    {
+      col: 'footer.col.company',
+      links: [
+        { key: 'footer.link.about', href: '#' },
+        { key: 'footer.link.contact', href: '#footer' },
+      ],
+    },
+    {
+      col: 'footer.col.legal',
+      links: [
+        { key: 'footer.link.privacy', href: '#' },
+        { key: 'footer.link.terms', href: '#' },
+        { key: 'footer.link.cookies', href: '#' },
+      ],
+    },
+  ] as const
 
   useEffect(() => {
     const section = sectionRef.current
@@ -66,21 +100,16 @@ export default function FooterSection() {
 
       <div className="px-8 pb-16 md:px-12">
         <div className="grid gap-8" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))' }}>
-          {[
-            { col: 'footer.col.platform', links: ['footer.link.geo', 'footer.link.seo', 'footer.link.content', 'footer.link.rank'] },
-            { col: 'footer.col.resources', links: ['footer.link.docs', 'footer.link.api', 'footer.link.cases', 'footer.link.blog'] },
-            { col: 'footer.col.company', links: ['footer.link.about', 'footer.link.careers', 'footer.link.press', 'footer.link.contact'] },
-            { col: 'footer.col.legal', links: ['footer.link.privacy', 'footer.link.terms', 'footer.link.cookies'] },
-          ].map(({ col, links }) => (
+          {footerColumns.map(({ col, links }) => (
             <div key={col} className="footer-column">
               <h4 className="font-mono text-xs uppercase tracking-widest text-white" style={{ letterSpacing: '0.15em', marginBottom: '1rem' }}>
                 {t(col) as string}
               </h4>
               <ul className="flex flex-col gap-2">
                 {links.map((link) => (
-                  <li key={link}>
-                    <a href="#" className="nav-link-underline font-mono text-xs text-[#A0A0A0] transition-colors duration-200 hover:text-white" style={{ letterSpacing: '0.06em' }}>
-                      {t(link) as string}
+                  <li key={link.key}>
+                    <a href={link.href} className="nav-link-underline font-mono text-xs text-[#A0A0A0] transition-colors duration-200 hover:text-white" style={{ letterSpacing: '0.06em' }}>
+                      {t(link.key) as string}
                     </a>
                   </li>
                 ))}

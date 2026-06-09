@@ -10,10 +10,13 @@ export interface ArticleEntry {
   parentSpoke?: string
   // optional enrichment
   excerpt?: string
+  summary?: string
   image?: string
   featured?: boolean
   readTime?: string
   pubDate?: string
+  updatedDate?: string
+  author?: string
 }
 
 export interface ArticleData {

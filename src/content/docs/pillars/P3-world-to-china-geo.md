@@ -110,7 +110,7 @@ International brands frequently make these mistakes when entering China:
 - [Content Localization for China](/world-to-china/content-localization-china/) — Beyond translation strategies
 - [Building Authority on Baidu Baike & Zhihu](/world-to-china/baidu-baike-zhihu/) — Platform-specific authority building
 - [WeChat for B2B GEO](/world-to-china/wechat-b2b-geo/) — Leveraging WeChat for business visibility
-- [Technical SEO for Baidu](/world-to-world/technical-seo-baidu/) — Infrastructure and technical optimization
+- [Technical SEO for Baidu](/world-to-china/technical-seo-baidu/) — Infrastructure and technical optimization
 - [Cultural Nuances in Chinese Marketing](/world-to-china/cultural-nuances-marketing/) — Navigating cultural differences
 
 **Other pillars:**

@@ -1,12 +1,20 @@
 ---
 import '../styles/global.css';
+import { buildOrganizationJsonLd, CONTACT_EMAIL, DEFAULT_OG_IMAGE, SITE_DESCRIPTION, SITE_TITLE_SUFFIX } from '../utils/site';
 
 interface Props {
   title: string;
   description?: string;
+  canonical?: string;
+  image?: string;
+  structuredData?: Record<string, any> | Array<Record<string, any>>;
 }
 
-const { title, description } = Astro.props;
+const { title, description = SITE_DESCRIPTION, canonical, image = DEFAULT_OG_IMAGE, structuredData } = Astro.props;
+const pageTitle = `${title} | ${SITE_TITLE_SUFFIX}`;
+const canonicalUrl = canonical ? new URL(canonical, Astro.site).href : Astro.site ? new URL(Astro.url.pathname, Astro.site).href : undefined;
+const imageUrl = Astro.site ? new URL(image, Astro.site).href : image;
+const jsonLd = [buildOrganizationJsonLd(Astro.site), ...(Array.isArray(structuredData) ? structuredData : structuredData ? [structuredData] : [])].filter(Boolean);
 ---
 
 <!DOCTYPE html>
@@ -14,11 +22,24 @@ const { title, description } = Astro.props;
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{title} | GEO</title>
-  {description && <meta name="description" content={description} />}
+  <title>{pageTitle}</title>
+  <meta name="description" content={description} />
+  {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content={pageTitle} />
+  <meta property="og:description" content={description} />
+  {canonicalUrl && <meta property="og:url" content={canonicalUrl} />}
+  {imageUrl && <meta property="og:image" content={imageUrl} />}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={pageTitle} />
+  <meta name="twitter:description" content={description} />
+  {imageUrl && <meta name="twitter:image" content={imageUrl} />}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+  {jsonLd.map((item) => (
+    <script type="application/ld+json" set:html={JSON.stringify(item)} />
+  ))}
 </head>
 <body class="bg-[#050505] text-white">
   <nav style="border-bottom: 1px solid rgba(255,255,255,0.08);">
@@ -32,8 +53,10 @@ const { title, description } = Astro.props;
         </span>
       </a>
       <div class="flex gap-8" style="font-size: 0.75rem;">
-        <a href="/docs" class="nav-link-underline font-mono uppercase tracking-widest text-[#A0A0A0] hover:text-white transition-colors duration-200" style="letter-spacing: 0.12em;">Docs</a>
-        <a href="/sitemap" class="nav-link-underline font-mono uppercase tracking-widest text-[#A0A0A0] hover:text-white transition-colors duration-200" style="letter-spacing: 0.12em;">Sitemap</a>
+        <a href="/geo-fundamentals/" class="nav-link-underline font-mono uppercase tracking-widest text-[#A0A0A0] hover:text-white transition-colors duration-200" style="letter-spacing: 0.12em;">GEO</a>
+        <a href="/geo-fundamentals/geo-vs-seo/" class="nav-link-underline font-mono uppercase tracking-widest text-[#A0A0A0] hover:text-white transition-colors duration-200" style="letter-spacing: 0.12em;">SEO</a>
+        <a href="/sitemap/" class="nav-link-underline font-mono uppercase tracking-widest text-[#A0A0A0] hover:text-white transition-colors duration-200" style="letter-spacing: 0.12em;">Tutorials</a>
+        <a href={`mailto:${CONTACT_EMAIL}`} class="nav-link-underline font-mono uppercase tracking-widest text-[#A0A0A0] hover:text-white transition-colors duration-200" style="letter-spacing: 0.12em;">Contact</a>
       </div>
     </div>
   </nav>

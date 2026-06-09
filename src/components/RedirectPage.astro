@@ -1,0 +1,28 @@
+---
+interface Props {
+  title: string;
+  destination: string;
+  reason: string;
+}
+
+const { title, destination, reason } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="robots" content="noindex,follow" />
+  <link rel="canonical" href={destination} />
+  <meta http-equiv="refresh" content={`0;url=${destination}`} />
+  <script is:inline>
+    window.location.replace({JSON.stringify(destination)});
+  </script>
+</head>
+<body style="font-family: Inter, sans-serif; background: #050505; color: #fff; padding: 2rem;">
+  <p>Redirecting to <a href={destination} style="color: #60a5fa;">{destination}</a>.</p>
+  <p style="color: #a1a1aa;">{reason}</p>
+</body>
+</html>

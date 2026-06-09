@@ -1,49 +1,179 @@
 ---
+import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
+import { buildSitemapSections, getLegacyRedirects, getUtilityPages } from '../utils/content-index';
+
+const docs = await getCollection('docs');
+const sections = buildSitemapSections(docs);
+const utilityPages = getUtilityPages();
+const legacyRedirects = getLegacyRedirects();
+const contentCount = docs.length;
+const pillarCount = sections.length;
+const spokeCount = docs.filter((entry) => entry.data.spoke != null).length;
+const detailCount = docs.filter((entry) => entry.data.detail != null).length;
 ---
 
-<Layout title="Complete Sitemap">
+<Layout title="Tutorials Sitemap">
   <nav class="border-b border-zinc-800 bg-[#050505]">
-    <div class="max-w-6xl mx-auto px-8 py-5 flex justify-between">
-      <a href="/" class="text-2xl font-bold tracking-[-0.04em]">GEO</a>
+    <div class="max-w-6xl mx-auto px-8 py-5 flex justify-between items-center">
+      <a href="/" class="flex flex-col items-start leading-none">
+        <span class="font-display text-white" style="font-size: 0.95rem; letter-spacing: 0.06em; font-weight: 700; line-height: 1.1;">
+          Visibility Guide
+        </span>
+        <span class="font-serif italic" style="font-size: 0.62rem; color: #A0A0A0; letter-spacing: 0.04em; line-height: 1.3; margin-top: 1px;">
+          by NMC Interactive
+        </span>
+      </a>
+      <div class="flex gap-8" style="font-size: 0.75rem;">
+        <a href="/geo-fundamentals/" class="nav-link-underline font-mono uppercase tracking-widest text-[#A0A0A0] hover:text-white transition-colors duration-200" style="letter-spacing: 0.12em;">GEO</a>
+        <a href="/geo-fundamentals/geo-vs-seo/" class="nav-link-underline font-mono uppercase tracking-widest text-[#A0A0A0] hover:text-white transition-colors duration-200" style="letter-spacing: 0.12em;">SEO</a>
+        <a href="/sitemap/" class="nav-link-underline font-mono uppercase tracking-widest text-[#A0A0A0] hover:text-white transition-colors duration-200" style="letter-spacing: 0.12em;">Tutorials</a>
+        <a href="mailto:contact@nmc-interactive.com" class="nav-link-underline font-mono uppercase tracking-widest text-[#A0A0A0] hover:text-white transition-colors duration-200" style="letter-spacing: 0.12em;">Contact</a>
+      </div>
     </div>
   </nav>
 
-  <div class="max-w-5xl mx-auto px-8 py-16">
-    <h1 class="text-6xl font-semibold tracking-[-2px] mb-12">Complete Sitemap</h1>
+  <div class="max-w-6xl mx-auto px-8 py-16">
+    <div class="max-w-4xl">
+      <div class="text-xs tracking-[3px] text-zinc-500 mb-5">TUTORIALS INDEX</div>
+      <h1 class="text-6xl font-semibold tracking-[-2px] mb-6">HTML Sitemap</h1>
+      <p class="text-xl text-zinc-400 leading-relaxed max-w-3xl">
+        This page is the human-readable index for the live GEO knowledge base. It follows the canonical root-level route model and groups every published tutorial by pillar, spoke, and detail.
+      </p>
+    </div>
 
-    <div class="space-y-16 text-sm">
-      <!-- GEO Fundamentals -->
-      <div>
-        <div class="text-xs tracking-[3px] text-zinc-500 mb-4">CLUSTER 01 — GEO FUNDAMENTALS</div>
-        <div class="grid md:grid-cols-2 gap-x-12 gap-y-2 text-lg">
-          <a href="/docs/fundamentals/what-is-geo" class="hover:text-blue-400">What is GEO?</a>
-          <a href="/docs/fundamentals/history-of-geo" class="hover:text-blue-400">History and Evolution of GEO</a>
-          <a href="/docs/fundamentals/geo-vs-seo" class="hover:text-blue-400">GEO vs Traditional SEO</a>
-          <a href="/docs/fundamentals/how-generative-engines-work" class="hover:text-blue-400">How Generative Engines Work</a>
-        </div>
+    <div class="mt-12 grid gap-4 md:grid-cols-4">
+      <div class="border border-white/10 bg-white/[0.02] p-5">
+        <div class="font-mono text-[11px] uppercase tracking-[0.2em] text-zinc-500">Live HTML Tutorials</div>
+        <div class="mt-3 text-3xl font-semibold">{contentCount}</div>
       </div>
+      <div class="border border-white/10 bg-white/[0.02] p-5">
+        <div class="font-mono text-[11px] uppercase tracking-[0.2em] text-zinc-500">Pillars</div>
+        <div class="mt-3 text-3xl font-semibold">{pillarCount}</div>
+      </div>
+      <div class="border border-white/10 bg-white/[0.02] p-5">
+        <div class="font-mono text-[11px] uppercase tracking-[0.2em] text-zinc-500">Spokes</div>
+        <div class="mt-3 text-3xl font-semibold">{spokeCount}</div>
+      </div>
+      <div class="border border-white/10 bg-white/[0.02] p-5">
+        <div class="font-mono text-[11px] uppercase tracking-[0.2em] text-zinc-500">Details</div>
+        <div class="mt-3 text-3xl font-semibold">{detailCount}</div>
+      </div>
+    </div>
 
-      <!-- Strategies -->
-      <div>
-        <div class="text-xs tracking-[3px] text-zinc-500 mb-4">CLUSTER 02 — STRATEGIES</div>
-        <div class="grid md:grid-cols-2 gap-x-12 gap-y-2 text-lg">
-          <a href="/docs/strategies/core-geo-strategies" class="hover:text-blue-400">Core GEO Strategies</a>
-          <a href="/docs/strategies/e-e-a-t-optimization" class="hover:text-blue-400">E-E-A-T Optimization</a>
-          <a href="/docs/strategies/content-structuring" class="hover:text-blue-400">Content Structuring for AI</a>
-          <a href="/docs/strategies/citation-optimization" class="hover:text-blue-400">Citation &amp; Source Optimization</a>
+    <div class="mt-20 space-y-16">
+      <section>
+        <div class="mb-6 flex items-end justify-between gap-6">
+          <div>
+            <div class="text-xs tracking-[3px] text-zinc-500 mb-3">CORE SITE PAGES</div>
+            <h2 class="text-3xl font-semibold tracking-tight">Utility Pages</h2>
+          </div>
+          <div class="font-mono text-xs uppercase tracking-[0.18em] text-zinc-600">{utilityPages.length} pages</div>
         </div>
-      </div>
+        <div class="grid gap-3 md:grid-cols-2">
+          {utilityPages.map((page) => (
+            <a href={page.url} class="block border border-white/10 bg-white/[0.02] p-5 hover:border-blue-400/60 transition-colors">
+              <div class="text-lg font-semibold">{page.title}</div>
+              <div class="mt-1 font-mono text-xs text-blue-400">{page.url}</div>
+              <p class="mt-3 text-sm leading-relaxed text-zinc-400">{page.description}</p>
+            </a>
+          ))}
+        </div>
+      </section>
 
-      <!-- Advanced -->
-      <div>
-        <div class="text-xs tracking-[3px] text-zinc-500 mb-4">CLUSTER 03 — ADVANCED</div>
-        <div class="grid md:grid-cols-2 gap-x-12 gap-y-2 text-lg">
-          <a href="/docs/advanced/measurement" class="hover:text-blue-400">Measuring GEO Success</a>
-          <a href="/docs/advanced/tools" class="hover:text-blue-400">GEO Tools &amp; Platforms</a>
-          <a href="/docs/advanced/case-studies" class="hover:text-blue-400">Case Studies</a>
+      <section>
+        <div class="mb-6 flex items-end justify-between gap-6">
+          <div>
+            <div class="text-xs tracking-[3px] text-zinc-500 mb-3">PILLAR OVERVIEW</div>
+            <h2 class="text-3xl font-semibold tracking-tight">Canonical Knowledge Architecture</h2>
+          </div>
+          <div class="font-mono text-xs uppercase tracking-[0.18em] text-zinc-600">{pillarCount} pillars</div>
         </div>
-      </div>
+        <div class="grid gap-4 md:grid-cols-2">
+          {sections.map(({ pillar, spokes }) => (
+            <a href={pillar.data.url} class="block border border-white/10 bg-white/[0.02] p-6 hover:border-blue-400/60 transition-colors">
+              <div class="font-mono text-[11px] uppercase tracking-[0.2em] text-zinc-500">
+                Pillar {pillar.data.pillar}
+              </div>
+              <h3 class="mt-3 text-2xl font-semibold tracking-tight">{pillar.data.title}</h3>
+              <div class="mt-2 font-mono text-xs text-blue-400">{pillar.data.url}</div>
+              <div class="mt-4 text-sm text-zinc-400">
+                {spokes.length} spoke pages and {spokes.reduce((sum, item) => sum + item.details.length, 0)} detail pages
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      {sections.map(({ pillar, spokes }) => (
+        <section>
+          <div class="mb-8 flex items-end justify-between gap-6">
+            <div>
+              <div class="text-xs tracking-[3px] text-zinc-500 mb-3">
+                CLUSTER 0{pillar.data.pillar} — {pillar.data.cluster?.toUpperCase()}
+              </div>
+              <h2 class="text-3xl font-semibold tracking-tight">
+                <a href={pillar.data.url} class="hover:text-blue-400 transition-colors">{pillar.data.title}</a>
+              </h2>
+            </div>
+            <div class="font-mono text-xs uppercase tracking-[0.18em] text-zinc-600">
+              {spokes.length} spokes / {spokes.reduce((sum, item) => sum + item.details.length, 0)} details
+            </div>
+          </div>
+
+          <div class="space-y-6">
+            {spokes.map(({ spoke, details }) => (
+              <div class="border border-white/10 bg-white/[0.02] p-6">
+                <div class="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
+                  <div class="max-w-3xl">
+                    <div class="font-mono text-[11px] uppercase tracking-[0.2em] text-zinc-500">{spoke.data.spoke}</div>
+                    <a href={spoke.data.url} class="mt-2 block text-2xl font-semibold tracking-tight hover:text-blue-400 transition-colors">
+                      {spoke.data.title}
+                    </a>
+                    <div class="mt-2 font-mono text-xs text-blue-400">{spoke.data.url}</div>
+                  </div>
+                  <div class="font-mono text-xs uppercase tracking-[0.18em] text-zinc-600">{details.length} details</div>
+                </div>
+
+                {details.length > 0 && (
+                  <ul class="mt-5 grid gap-3 md:grid-cols-2">
+                    {details.map((detail) => (
+                      <li class="border-t border-white/6 pt-3">
+                        <a href={detail.data.url} class="text-base font-medium leading-snug hover:text-blue-400 transition-colors">
+                          {detail.data.title}
+                        </a>
+                        <div class="mt-1 font-mono text-[11px] text-zinc-500">{detail.data.detail} · {detail.data.url}</div>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            ))}
+          </div>
+        </section>
+      ))}
+
+      <section>
+        <div class="mb-6 flex items-end justify-between gap-6">
+          <div>
+            <div class="text-xs tracking-[3px] text-zinc-500 mb-3">LEGACY / REDIRECT CANDIDATES</div>
+            <h2 class="text-3xl font-semibold tracking-tight">Old Route Surface</h2>
+          </div>
+          <div class="font-mono text-xs uppercase tracking-[0.18em] text-zinc-600">{legacyRedirects.length} redirects</div>
+        </div>
+        <div class="grid gap-3">
+          {legacyRedirects.map((item) => (
+            <div class="border border-white/10 bg-white/[0.02] p-5">
+              <div class="text-lg font-semibold">{item.title}</div>
+              <div class="mt-3 flex flex-col gap-2 text-sm md:flex-row md:items-center md:gap-4">
+                <span class="font-mono text-zinc-500">{item.legacyUrl}</span>
+                <span class="text-zinc-600">→</span>
+                <a href={item.targetUrl} class="font-mono text-blue-400 hover:text-blue-300">{item.targetUrl}</a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
     </div>
   </div>
 </Layout>

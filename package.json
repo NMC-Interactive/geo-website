@@ -6,11 +6,14 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
+    "validate:site": "node scripts/validate-site.mjs",
+    "predeploy": "npm run build && npm run validate:site",
+    "deploy": "wrangler pages deploy dist",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^4.16.0",
+    "astro": "^6.4.4",
     "gsap": "^3.15.0",
     "lucide-react": "^0.562.0",
     "postprocessing": "^6.39.1",
@@ -19,12 +22,12 @@
     "three": "^0.184.0"
   },
   "devDependencies": {
-    "@astrojs/react": "^3.6.0",
-    "@astrojs/tailwind": "^5.1.2",
+    "@astrojs/react": "^5.0.7",
     "@tailwindcss/typography": "^0.5.19",
     "@types/react": "^19.2.5",
     "@types/react-dom": "^19.2.3",
     "@types/three": "^0.184.1",
+    "autoprefixer": "^10.5.0",
     "tailwindcss": "^3.4.14",
     "wrangler": "^4.98.0"
   }

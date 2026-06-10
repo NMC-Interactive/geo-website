@@ -10,12 +10,18 @@
     "predeploy": "npm run build && npm run validate:site",
     "deploy": "wrangler pages deploy dist",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "pb": "node scripts/pb.mjs",
+    "pb:status": "node scripts/pb.mjs status",
+    "pb:validate": "node scripts/pb.mjs validate",
+    "pb:report": "node scripts/pb.mjs report"
   },
   "dependencies": {
     "astro": "^6.4.4",
     "gsap": "^3.15.0",
+    "js-yaml": "^4.1.0",
     "lucide-react": "^0.562.0",
+    "node": "^26.3.0",
     "postprocessing": "^6.39.1",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",

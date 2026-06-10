@@ -1,3 +1,13 @@
+# Agent-playbook files
+playbook.yaml
+SKILL.md
+CLAUDE.md
+AGENTS.md
+memory/
 processes/
 skills/
 PROJECT-MEMORY.md
+
+# Playbook generated reports (rollups are artifacts, not source). Keep the folder.
+artifacts/reports/*.md
+!artifacts/reports/.gitkeep

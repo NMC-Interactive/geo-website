@@ -2,12 +2,27 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Playbook Loop Layer
+
+This repo runs on an **Agent-Playbook** loop. The master is `playbook.yaml` (the fixation), and `SKILL.md` teaches how to operate it. Work the loop: **orient → select → act → verify → record → report**.
+
+```bash
+node scripts/pb.mjs status        # orient (backlog + journal + guardrail state)
+node scripts/pb.mjs next --claim  # pick + claim the next task
+node scripts/pb.mjs validate      # playbook guardrails (also: npm run validate:site)
+node scripts/pb.mjs record --task <id> --action <a> --status <done|blocked> --notes "..."
+node scripts/pb.mjs report        # roll the journal up into artifacts/reports/
+```
+
+The backlog lives in `memory/backlog.yaml`; the machine record in `memory/journal.ndjson` (append via `pb record`, never hand-edit).
+
 ## Required Startup Rules
 
-1. Read `PROJECT-MEMORY.md` first.
-2. Check repo-local skills in `skills/` before starting ad hoc work.
-3. Follow the canonical process files in `processes/`.
-4. If `PROJECT-MEMORY.md` changes materially, keep this file aligned with it.
+1. Read `playbook.yaml` and `SKILL.md`, then run `node scripts/pb.mjs status` to orient.
+2. Read `PROJECT-MEMORY.md` first for durable repo rules.
+3. Check repo-local skills in `skills/` before starting ad hoc work.
+4. Follow the canonical process files in `processes/`.
+5. If `PROJECT-MEMORY.md` changes materially, keep this file aligned with it.
 
 ## Canonical Process And Skills Layer
 

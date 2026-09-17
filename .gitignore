@@ -1,5 +1,8 @@
 # Dependencies
 node_modules/
+.wenmei/
+.agent-playbook/
+.agents-playbook
 
 # Agent-playbook files
 playbook.yaml

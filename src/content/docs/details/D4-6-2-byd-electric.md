@@ -5,6 +5,8 @@ image: "/images/articles/cover-byd-electric.webp"
 detail: "D4-6-2"
 parent_spoke: "/china-to-world/case-studies-global-brands/"
 cluster: "China-to-World"
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # Case Study: BYD's Electric Vehicle Global Expansion

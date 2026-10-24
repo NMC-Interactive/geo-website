@@ -5,6 +5,8 @@ image: "/images/articles/cover-core-web-vitals.webp"
 detail: "D1-6-1"
 parent_spoke: "/geo-fundamentals/technical-foundations-geo/"
 cluster: "GEO Fundamentals"
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # Core Web Vitals & Page Speed for GEO

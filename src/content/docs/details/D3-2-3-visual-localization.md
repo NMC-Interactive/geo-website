@@ -5,6 +5,8 @@ image: "/images/articles/cover-visual-localization.webp"
 detail: "D3-2-3"
 parent_spoke: "/world-to-china/content-localization-china/"
 cluster: "World-to-China"
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # Visual & UX Localization for China

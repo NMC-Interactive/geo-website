@@ -5,6 +5,8 @@ image: "/images/articles/cover-icp-filing-process.webp"
 detail: "D2-6-3"
 parent_spoke: "/china-ai-ecosystem/ai-regulations-china/"
 cluster: "China AI Ecosystem"
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # The ICP Filing Process Explained

@@ -5,6 +5,8 @@ image: "/images/articles/cover-technical-seo-baidu.webp"
 spoke: "S3-5"
 cluster: "World-to-China"
 parent_pillar: "/world-to-china-geo/"
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # Technical SEO for Baidu: Hosting, Speed & Schema

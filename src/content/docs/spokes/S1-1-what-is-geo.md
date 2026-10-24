@@ -5,6 +5,8 @@ image: "/images/articles/cover-what-is-geo.webp"
 spoke: "S1-1"
 cluster: "GEO Fundamentals"
 parent_pillar: "/geo-fundamentals/"
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # What Is Generative Engine Optimization (GEO)?

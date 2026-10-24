@@ -5,6 +5,8 @@ image: "/images/articles/cover-icp-application-timeline.webp"
 detail: "D3-1-2"
 parent_spoke: "/world-to-china/icp-license-guide/"
 cluster: "World-to-China"
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # ICP Application Timeline & Requirements

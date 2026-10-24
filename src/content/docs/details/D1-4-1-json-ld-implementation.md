@@ -5,6 +5,8 @@ image: "/images/articles/cover-json-ld-implementation.webp"
 detail: "D1-4-1"
 parent_spoke: "/geo-fundamentals/structured-data-geo/"
 cluster: "GEO Fundamentals"
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # JSON-LD Implementation: A Complete Tutorial

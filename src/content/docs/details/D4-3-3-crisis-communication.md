@@ -5,6 +5,8 @@ image: "/images/articles/cover-crisis-communication.webp"
 detail: "D4-3-3"
 parent_spoke: "/china-to-world/international-pr-media/"
 cluster: "China-to-World"
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # Crisis Communication for Global Brands

@@ -5,6 +5,8 @@ image: "/images/articles/cover-thought-leadership-citations.webp"
 spoke: "S4-5"
 cluster: "China-to-World"
 parent_pillar: "/china-to-world-geo/"
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # Creating Thought Leadership That Gets Cited by AI

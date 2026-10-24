@@ -5,6 +5,8 @@ image: "/images/articles/cover-ai-regulations-china.webp"
 spoke: "S2-6"
 cluster: "China AI Ecosystem"
 parent_pillar: "/china-ai-ecosystem/"
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # AI Regulations in China: Compliance for Content Creators

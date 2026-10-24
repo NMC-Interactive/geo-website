@@ -5,6 +5,8 @@ image: "/images/articles/cover-gemini-optimization.webp"
 detail: "D4-4-2"
 parent_spoke: "/china-to-world/google-gemini-ai-overviews/"
 cluster: "China-to-World"
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # Gemini-Specific Optimization Techniques

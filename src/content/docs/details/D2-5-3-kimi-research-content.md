@@ -5,6 +5,8 @@ image: "/images/articles/cover-kimi-research-content.webp"
 detail: "D2-5-3"
 parent_spoke: "/china-ai-ecosystem/kimi-moonshot/"
 cluster: "China AI Ecosystem"
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # Research & Whitepaper Strategy for Kimi

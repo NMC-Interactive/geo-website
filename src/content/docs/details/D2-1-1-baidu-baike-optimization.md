@@ -5,6 +5,8 @@ image: "/images/articles/cover-baidu-baike-optimization.webp"
 detail: "D2-1-1"
 parent_spoke: "/china-ai-ecosystem/baidu-ernie-bot/"
 cluster: "China AI Ecosystem"
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # Baidu Baike: Creating & Optimizing Your Entry

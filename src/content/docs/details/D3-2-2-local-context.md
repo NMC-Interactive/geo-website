@@ -5,6 +5,8 @@ image: "/images/articles/cover-local-context.webp"
 detail: "D3-2-2"
 parent_spoke: "/world-to-china/content-localization-china/"
 cluster: "World-to-China"
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # Adding Local Context to Global Content

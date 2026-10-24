@@ -5,6 +5,8 @@ image: "/images/articles/cover-linkedin-global-brand.webp"
 spoke: "S4-2"
 cluster: "China-to-World"
 parent_pillar: "/china-to-world-geo/"
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # Building a Global Brand on LinkedIn

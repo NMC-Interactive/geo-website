@@ -5,6 +5,8 @@ image: "/images/articles/cover-faq-howto-schema.webp"
 detail: "D1-4-2"
 parent_spoke: "/geo-fundamentals/structured-data-geo/"
 cluster: "GEO Fundamentals"
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # FAQ & HowTo Schema for AI Extraction

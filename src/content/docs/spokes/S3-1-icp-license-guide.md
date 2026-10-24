@@ -5,6 +5,8 @@ image: "/images/articles/cover-icp-license-guide.webp"
 spoke: "S3-1"
 cluster: "World-to-China"
 parent_pillar: "/world-to-china-geo/"
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # ICP License: Step-by-Step Guide for Foreign Companies

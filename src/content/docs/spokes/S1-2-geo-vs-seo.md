@@ -5,6 +5,8 @@ image: "/images/articles/cover-geo-vs-seo.webp"
 spoke: "S1-2"
 cluster: "GEO Fundamentals"
 parent_pillar: "/geo-fundamentals/"
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # GEO vs SEO: Key Differences & Strategic Implications

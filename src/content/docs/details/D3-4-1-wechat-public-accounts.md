@@ -5,6 +5,8 @@ image: "/images/articles/cover-wechat-public-accounts.webp"
 detail: "D3-4-1"
 parent_spoke: "/world-to-china/wechat-b2b-geo/"
 cluster: "World-to-China"
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # WeChat Public Accounts for B2B GEO

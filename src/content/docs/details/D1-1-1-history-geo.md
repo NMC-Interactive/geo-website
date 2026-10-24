@@ -5,6 +5,8 @@ image: "/images/articles/cover-history-geo.webp"
 detail: "D1-1-1"
 parent_spoke: "/geo-fundamentals/what-is-geo/"
 cluster: "GEO Fundamentals"
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # The History and Evolution of GEO

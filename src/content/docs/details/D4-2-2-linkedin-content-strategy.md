@@ -5,6 +5,8 @@ image: "/images/articles/cover-linkedin-content-strategy.webp"
 detail: "D4-2-2"
 parent_spoke: "/china-to-world/linkedin-global-brand/"
 cluster: "China-to-World"
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # LinkedIn Content Strategy for Chinese Brands

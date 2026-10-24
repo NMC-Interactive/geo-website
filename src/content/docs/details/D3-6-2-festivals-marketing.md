@@ -5,6 +5,8 @@ image: "/images/articles/cover-festivals-marketing.webp"
 detail: "D3-6-2"
 parent_spoke: "/world-to-china/cultural-nuances-marketing/"
 cluster: "World-to-China"
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # Chinese Festival Marketing Calendar

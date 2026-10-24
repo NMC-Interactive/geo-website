@@ -5,6 +5,8 @@ image: "/images/articles/cover-transcreation.webp"
 detail: "D4-1-1"
 parent_spoke: "/china-to-world/english-content-strategy/"
 cluster: "China-to-World"
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # Transcreation vs Translation: The Critical Difference

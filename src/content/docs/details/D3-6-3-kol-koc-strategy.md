@@ -5,6 +5,8 @@ image: "/images/articles/cover-kol-koc-strategy.webp"
 detail: "D3-6-3"
 parent_spoke: "/world-to-china/cultural-nuances-marketing/"
 cluster: "World-to-China"
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # KOL vs KOC: Choosing Your Strategy

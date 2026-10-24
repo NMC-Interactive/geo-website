@@ -5,6 +5,8 @@ image: "/images/articles/cover-baidu-zhidao-strategy.webp"
 detail: "D2-1-2"
 parent_spoke: "/china-ai-ecosystem/baidu-ernie-bot/"
 cluster: "China AI Ecosystem"
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # Baidu Zhidao: Q&A Authority Building

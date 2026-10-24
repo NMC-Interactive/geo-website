@@ -13,6 +13,8 @@ related_spokes: [
   "/geo-fundamentals/entity-authority-geo/",
   "/geo-fundamentals/technical-foundations-geo/"
 ]
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # GEO Fundamentals: The Complete Guide to Generative Engine Optimization

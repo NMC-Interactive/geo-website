@@ -13,6 +13,8 @@ related_spokes: [
   "/world-to-china/technical-seo-baidu/",
   "/world-to-china/cultural-nuances-marketing/"
 ]
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # World-to-China GEO: A Complete Market Entry & Optimization Playbook

@@ -5,6 +5,8 @@ image: "/images/articles/cover-pipl-compliance.webp"
 detail: "D2-6-1"
 parent_spoke: "/china-ai-ecosystem/ai-regulations-china/"
 cluster: "China AI Ecosystem"
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # PIPL Compliance for AI Content

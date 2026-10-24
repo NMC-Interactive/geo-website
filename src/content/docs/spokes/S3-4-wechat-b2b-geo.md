@@ -5,6 +5,8 @@ image: "/images/articles/cover-wechat-b2b-geo.webp"
 spoke: "S3-4"
 cluster: "World-to-China"
 parent_pillar: "/world-to-china-geo/"
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # WeChat for B2B GEO: Public Accounts & Mini Programs

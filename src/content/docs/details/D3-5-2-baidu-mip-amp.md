@@ -5,6 +5,8 @@ image: "/images/articles/cover-baidu-mip-amp.webp"
 detail: "D3-5-2"
 parent_spoke: "/world-to-china/technical-seo-baidu/"
 cluster: "World-to-China"
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # Baidu MIP & Mobile Acceleration

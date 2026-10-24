@@ -5,6 +5,8 @@ image: "/images/articles/cover-mobile-first-geo.webp"
 detail: "D1-6-2"
 parent_spoke: "/geo-fundamentals/technical-foundations-geo/"
 cluster: "GEO Fundamentals"
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # Mobile-First Design & GEO Performance

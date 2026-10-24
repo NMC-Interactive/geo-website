@@ -5,6 +5,8 @@ image: "/images/articles/cover-qwen-ecommerce.webp"
 detail: "D2-4-1"
 parent_spoke: "/china-ai-ecosystem/qwen-alibaba/"
 cluster: "China AI Ecosystem"
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # Qwen for E-Commerce & Product Content

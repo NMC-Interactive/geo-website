@@ -5,6 +5,8 @@ image: "/images/articles/cover-data-driven-content.webp"
 detail: "D4-5-2"
 parent_spoke: "/china-to-world/thought-leadership-citations/"
 cluster: "China-to-World"
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # Data-Driven Content: Benchmarks & Reports

@@ -1,6 +1,6 @@
 import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
-import { flattenCanonicalUrls, getUtilityPages } from '../utils/content-index';
+import { buildSitemapSections, getUtilityPages } from '../utils/content-index';
 
 function escapeXml(value: string): string {
   return value
@@ -31,9 +31,15 @@ export const GET: APIRoute = async ({ site, url }) => {
     docs.map((entry) => [entry.data.url, toDateString(entry.data.updatedDate ?? entry.data.pubDate)]),
   );
 
+  // Cluster-ordered URL list: utility pages first, then pillar → spokes → details.
+  const clusterUrls = buildSitemapSections(docs).flatMap(({ pillar, spokes }) => [
+    pillar.data.url,
+    ...spokes.flatMap(({ spoke, details }) => [spoke.data.url, ...details.map((detail) => detail.data.url)]),
+  ]);
+
   const urls: Array<{ path: string; lastmod?: string }> = [
     ...getUtilityPages().map((page) => ({ path: page.url, lastmod: siteLastmod })),
-    ...flattenCanonicalUrls(docs).map((path) => ({ path, lastmod: lastmodByUrl.get(path) })),
+    ...clusterUrls.map((path) => ({ path, lastmod: lastmodByUrl.get(path) })),
   ];
 
   const xml = [

@@ -43,6 +43,40 @@ function validateArticleImages(directory = resolve(root, 'src/content/docs')) {
   }
 }
 
+function validateSitemapParity(directory = resolve(root, 'src/content/docs')) {
+  const liveUrls = new Set();
+  const walk = (dir) => {
+    for (const entry of readdirSync(dir, { withFileTypes: true })) {
+      const filePath = resolve(dir, entry.name);
+      if (entry.isDirectory()) {
+        walk(filePath);
+        continue;
+      }
+      if (!/\.mdx?$/.test(entry.name)) continue;
+      const content = readFileSync(filePath, 'utf8');
+      const url = content.match(/^url:\s*"([^"]+)"/m)?.[1];
+      if (url) liveUrls.add(url);
+    }
+  };
+  walk(directory);
+
+  // Endpoints that are routes but not content pages (kept out of the XML sitemap).
+  const nonContentEndpoints = new Set(['/llms.txt', '/llms-full.txt', '/robots.txt', '/404.html']);
+
+  const sitemapMd = readFileSync(resolve(root, 'docs/articles/SITEMAP.md'), 'utf8');
+  const plannedUrls = new Set(
+    [...sitemapMd.matchAll(/`(\/[a-zA-Z0-9\-]+\/?(?:[a-zA-Z0-9\-]+\/?)*)`/g)].map((match) => match[1])
+  );
+
+  for (const url of plannedUrls) {
+    if (nonContentEndpoints.has(url)) continue;
+    assert(liveUrls.has(url), `SITEMAP.md lists ${url} but no content file defines it.`);
+  }
+  for (const url of liveUrls) {
+    assert(plannedUrls.has(url), `Content defines ${url} but SITEMAP.md does not list it (sitemap parity rule).`);
+  }
+}
+
 const requiredArtifacts = [
   'index.html',
   'sitemap/index.html',
@@ -60,6 +94,7 @@ for (const artifact of requiredArtifacts) {
 }
 
 validateArticleImages();
+validateSitemapParity();
 
 const sitemapXml = read('sitemap.xml');
 const robotsTxt = read('robots.txt');

@@ -1,5 +1,18 @@
 # GEO Website Content Sitemap — 100+ Pages
 
+## Machine-Readable & Infrastructure Endpoints
+
+These are routes, not content pages — they are intentionally kept out of the XML
+sitemap but are part of the crawl surface:
+
+| Endpoint | Purpose |
+|---|---|
+| `/robots.txt` | Crawler rules with explicit opt-in for AI crawlers (GPTBot, ClaudeBot, PerplexityBot, Google-Extended, Baiduspider, Bytespider, …) + sitemap reference |
+| `/llms.txt` | Curated AI index, llmstxt.org format (pillars + spokes with descriptions) |
+| `/llms-full.txt` | Complete AI index of all 100 content pages |
+| `/404.html` | Real 404 for unknown URLs (also served with 404 status on the host) |
+| `/_redirects` | 301s: `/llm.txt → /llms.txt` and legacy `/docs/*` routes to canonical URLs |
+
 ## Current IA Intent
 
 The content map below remains the canonical 100-page knowledge architecture. As of 2026-06-09, the public information architecture intent is:

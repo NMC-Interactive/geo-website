@@ -25,3 +25,14 @@ export function buildOrganizationJsonLd(origin: URL | undefined) {
     sameAs: Object.values(author.profiles).map((profile) => profile.url),
   };
 }
+
+export function buildWebSiteJsonLd(origin: URL | undefined) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: SITE_NAME,
+    description: SITE_DESCRIPTION,
+    url: origin ? new URL('/', origin).href : undefined,
+    publisher: buildOrganizationJsonLd(origin),
+  };
+}

@@ -25,6 +25,7 @@ const jsonLd = [buildOrganizationJsonLd(Astro.site), ...(Array.isArray(structure
   <title>{pageTitle}</title>
   <meta name="description" content={description} />
   {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+  <meta property="og:site_name" content={SITE_TITLE_SUFFIX} />
   <meta property="og:type" content="article" />
   <meta property="og:title" content={pageTitle} />
   <meta property="og:description" content={description} />

@@ -17,3 +17,6 @@ PROJECT-MEMORY.md
 # Playbook generated reports (rollups are artifacts, not source). Keep the folder.
 artifacts/reports/*.md
 !artifacts/reports/.gitkeep
+
+# Build output (deployed from CI; never committed)
+dist/

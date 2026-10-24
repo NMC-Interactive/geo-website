@@ -8,9 +8,10 @@ interface Props {
   canonical?: string;
   image?: string;
   structuredData?: Record<string, any> | Array<Record<string, any>>;
+  noindex?: boolean;
 }
 
-const { title, description = SITE_DESCRIPTION, canonical, image = DEFAULT_OG_IMAGE, structuredData } = Astro.props;
+const { title, description = SITE_DESCRIPTION, canonical, image = DEFAULT_OG_IMAGE, structuredData, noindex = false } = Astro.props;
 const pageTitle = `${title} | ${SITE_TITLE_SUFFIX}`;
 const canonicalUrl = canonical ? new URL(canonical, Astro.site).href : Astro.site ? new URL(Astro.url.pathname, Astro.site).href : undefined;
 const imageUrl = Astro.site ? new URL(image, Astro.site).href : image;
@@ -24,7 +25,9 @@ const jsonLd = [buildOrganizationJsonLd(Astro.site), ...(Array.isArray(structure
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{pageTitle}</title>
   <meta name="description" content={description} />
+  {noindex && <meta name="robots" content="noindex,follow" />}
   {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+  <meta property="og:site_name" content={SITE_TITLE_SUFFIX} />
   <meta property="og:type" content="website" />
   <meta property="og:title" content={pageTitle} />
   <meta property="og:description" content={description} />

@@ -14,6 +14,11 @@ export interface FaqItem {
   answer: string;
 }
 
+export interface BreadcrumbItem {
+  name: string;
+  url: string;
+}
+
 const KNOWN_ENTITIES = [
   'ChatGPT',
   'Perplexity',
@@ -46,7 +51,8 @@ export function extractSummary(markdown: string, fallbackTitle?: string): string
     .map((part) => part.trim())
     .filter(Boolean)
     .filter((part) => !part.startsWith('#'))
-    .filter((part) => !part.startsWith('---'));
+    .filter((part) => !part.startsWith('---'))
+    .filter((part) => !part.startsWith('>'));
 
   const candidate = paragraphs.find((part) => part.length > 120) ?? paragraphs[0] ?? fallbackTitle ?? '';
   const plain = markdownToPlainText(candidate);
@@ -100,6 +106,7 @@ export function buildArticleJsonLd(input: {
   published?: string;
   updated?: string;
   faq?: FaqItem[];
+  breadcrumbs?: BreadcrumbItem[];
 }) {
   const author = getAuthorById(input.entry.data.author);
   const article = {
@@ -124,11 +131,23 @@ export function buildArticleJsonLd(input: {
     dateModified: input.updated ?? input.published,
   };
 
-  if (!input.faq?.length) return [article];
+  const blocks: Array<Record<string, unknown>> = [article];
 
-  return [
-    article,
-    {
+  if (input.breadcrumbs?.length) {
+    blocks.push({
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: input.breadcrumbs.map((crumb, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: crumb.name,
+        item: crumb.url,
+      })),
+    });
+  }
+
+  if (input.faq?.length) {
+    blocks.push({
       '@context': 'https://schema.org',
       '@type': 'FAQPage',
       mainEntity: input.faq.map((item) => ({
@@ -139,6 +158,8 @@ export function buildArticleJsonLd(input: {
           text: item.answer,
         },
       })),
-    },
-  ];
+    });
+  }
+
+  return blocks;
 }

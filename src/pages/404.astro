@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Page Not Found" noindex>
+  <main class="flex min-h-[70vh] flex-col items-center justify-center px-8 py-16 text-center">
+    <div class="font-mono text-xs uppercase tracking-[0.3em] text-[#3B82F6]">Error 404</div>
+    <h1 class="mt-4 text-5xl font-extrabold tracking-tight md:text-6xl">This page does not exist</h1>
+    <p class="mt-5 max-w-xl text-lg leading-8 text-[#A0A0A0]">
+      The URL you requested is not part of the GEO Visibility Guide. It may have moved during the
+      route migration from the legacy <code class="font-mono text-sm text-[#60A5FA]">/docs/</code> structure.
+    </p>
+    <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
+      <a
+        href="/"
+        class="rounded-full border border-[#3B82F6] bg-[#3B82F6]/10 px-6 py-3 font-mono text-xs uppercase tracking-[0.12em] text-[#D7E6FF] transition-colors hover:bg-[#3B82F6]/20"
+      >
+        Go to Home
+      </a>
+      <a
+        href="/sitemap/"
+        class="rounded-full border border-white/10 bg-white/[0.04] px-6 py-3 font-mono text-xs uppercase tracking-[0.12em] text-[#D7E6FF] transition-colors hover:border-blue-400/60"
+      >
+        Browse the Tutorials Sitemap
+      </a>
+    </div>
+  </main>
+</Layout>

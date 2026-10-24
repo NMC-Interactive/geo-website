@@ -4,6 +4,7 @@ import Layout from '../layouts/Layout.astro';
 import App from '../components/App';
 import type { ArticleData, ArticleEntry } from '../types/articles';
 import { clusterImage } from '../types/articles';
+import { buildWebSiteJsonLd } from '../utils/site';
 
 const docs = await getCollection('docs');
 
@@ -56,6 +57,9 @@ const recent = docs
 const articleData: ArticleData = { pillars, spokes, recent };
 ---
 
-<Layout title="GEO | Generative Engine Optimization Intelligence Platform">
+<Layout
+  title="GEO | Generative Engine Optimization Intelligence Platform"
+  structuredData={[buildWebSiteJsonLd(Astro.site)]}
+>
   <App articleData={articleData} client:only="react" />
 </Layout>

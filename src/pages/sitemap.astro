@@ -84,6 +84,32 @@ const detailCount = docs.filter((entry) => entry.data.detail != null).length;
       <section>
         <div class="mb-6 flex items-end justify-between gap-6">
           <div>
+            <div class="text-xs tracking-[3px] text-zinc-500 mb-3">MACHINE-READABLE INDEXES</div>
+            <h2 class="text-3xl font-semibold tracking-tight">AI & Crawler Endpoints</h2>
+          </div>
+        </div>
+        <div class="grid gap-3 md:grid-cols-3">
+          <a href="/llms.txt" class="block border border-white/10 bg-white/[0.02] p-5 hover:border-blue-400/60 transition-colors">
+            <div class="text-lg font-semibold">llms.txt</div>
+            <div class="mt-1 font-mono text-xs text-blue-400">/llms.txt</div>
+            <p class="mt-3 text-sm leading-relaxed text-zinc-400">Curated AI index: pillars and spokes with descriptions (llmstxt.org format).</p>
+          </a>
+          <a href="/llms-full.txt" class="block border border-white/10 bg-white/[0.02] p-5 hover:border-blue-400/60 transition-colors">
+            <div class="text-lg font-semibold">llms-full.txt</div>
+            <div class="mt-1 font-mono text-xs text-blue-400">/llms-full.txt</div>
+            <p class="mt-3 text-sm leading-relaxed text-zinc-400">Complete AI index of every published page, including detail articles.</p>
+          </a>
+          <a href="/robots.txt" class="block border border-white/10 bg-white/[0.02] p-5 hover:border-blue-400/60 transition-colors">
+            <div class="text-lg font-semibold">robots.txt</div>
+            <div class="mt-1 font-mono text-xs text-blue-400">/robots.txt</div>
+            <p class="mt-3 text-sm leading-relaxed text-zinc-400">Crawler rules with explicit opt-in for AI crawlers (GPTBot, ClaudeBot, Baiduspider, Bytespider, …).</p>
+          </a>
+        </div>
+      </section>
+
+      <section>
+        <div class="mb-6 flex items-end justify-between gap-6">
+          <div>
             <div class="text-xs tracking-[3px] text-zinc-500 mb-3">PILLAR OVERVIEW</div>
             <h2 class="text-3xl font-semibold tracking-tight">Canonical Knowledge Architecture</h2>
           </div>

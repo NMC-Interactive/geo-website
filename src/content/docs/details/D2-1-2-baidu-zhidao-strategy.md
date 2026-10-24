@@ -1,6 +1,7 @@
 ---
 title: "Baidu Zhidao: Q&A Authority Building"
 url: "/china-ai-ecosystem/baidu-ernie-bot/baidu-zhidao-strategy/"
+image: "/images/articles/cover-baidu-zhidao-strategy.webp"
 detail: "D2-1-2"
 parent_spoke: "/china-ai-ecosystem/baidu-ernie-bot/"
 cluster: "China AI Ecosystem"

@@ -1,6 +1,7 @@
 ---
 title: "AI Regulations in China: Compliance for Content Creators"
 url: "/china-ai-ecosystem/ai-regulations-china/"
+image: "/images/articles/cover-ai-regulations-china.webp"
 spoke: "S2-6"
 cluster: "China AI Ecosystem"
 parent_pillar: "/china-ai-ecosystem/"

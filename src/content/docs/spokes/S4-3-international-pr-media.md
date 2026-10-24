@@ -1,6 +1,7 @@
 ---
 title: "International PR & Media: Earning Global Authority"
 url: "/china-to-world/international-pr-media/"
+image: "/images/articles/cover-international-pr-media.webp"
 spoke: "S4-3"
 cluster: "China-to-World"
 parent_pillar: "/china-to-world-geo/"

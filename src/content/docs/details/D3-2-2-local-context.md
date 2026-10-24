@@ -1,6 +1,7 @@
 ---
 title: "Adding Local Context to Global Content"
 url: "/world-to-china/content-localization-china/local-context/"
+image: "/images/articles/cover-local-context.webp"
 detail: "D3-2-2"
 parent_spoke: "/world-to-china/content-localization-china/"
 cluster: "World-to-China"

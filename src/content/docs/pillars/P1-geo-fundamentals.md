@@ -1,6 +1,7 @@
 ---
 title: "GEO Fundamentals: The Complete Guide to Generative Engine Optimization"
 url: "/geo-fundamentals/"
+image: "/images/articles/cover-geo-fundamentals.webp"
 pillar: 1
 cluster: "GEO Fundamentals"
 related_pillars: ["/china-ai-ecosystem/", "/world-to-china-geo/", "/china-to-world-geo/"]

@@ -1,6 +1,7 @@
 ---
 title: "LinkedIn Profile Optimization for Executives"
 url: "/china-to-world/linkedin-global-brand/linkedin-profile-optimization/"
+image: "/images/articles/cover-linkedin-profile-optimization.webp"
 detail: "D4-2-1"
 parent_spoke: "/china-to-world/linkedin-global-brand/"
 cluster: "China-to-World"

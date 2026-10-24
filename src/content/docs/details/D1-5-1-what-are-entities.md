@@ -1,6 +1,7 @@
 ---
 title: "What Are Entities in AI Search?"
 url: "/geo-fundamentals/entity-authority-geo/what-are-entities/"
+image: "/images/articles/cover-what-are-entities.webp"
 detail: "D1-5-1"
 parent_spoke: "/geo-fundamentals/entity-authority-geo/"
 cluster: "GEO Fundamentals"

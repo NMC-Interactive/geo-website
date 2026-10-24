@@ -1,6 +1,7 @@
 ---
 title: "Visual & UX Localization for China"
 url: "/world-to-china/content-localization-china/visual-localization/"
+image: "/images/articles/cover-visual-localization.webp"
 detail: "D3-2-3"
 parent_spoke: "/world-to-china/content-localization-china/"
 cluster: "World-to-China"

@@ -1,6 +1,7 @@
 ---
 title: "Core Web Vitals & Page Speed for GEO"
 url: "/geo-fundamentals/technical-foundations-geo/core-web-vitals/"
+image: "/images/articles/cover-core-web-vitals.webp"
 detail: "D1-6-1"
 parent_spoke: "/geo-fundamentals/technical-foundations-geo/"
 cluster: "GEO Fundamentals"

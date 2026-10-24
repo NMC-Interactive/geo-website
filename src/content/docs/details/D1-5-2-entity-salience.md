@@ -1,6 +1,7 @@
 ---
 title: "Entity Salience: How to Become AI-Recognized"
 url: "/geo-fundamentals/entity-authority-geo/entity-salience/"
+image: "/images/articles/cover-entity-salience.webp"
 detail: "D1-5-2"
 parent_spoke: "/geo-fundamentals/entity-authority-geo/"
 cluster: "GEO Fundamentals"

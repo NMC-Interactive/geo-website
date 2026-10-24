@@ -1,6 +1,7 @@
 ---
 title: "WeChat Public Accounts for B2B GEO"
 url: "/world-to-china/wechat-b2b-geo/wechat-public-accounts/"
+image: "/images/articles/cover-wechat-public-accounts.webp"
 detail: "D3-4-1"
 parent_spoke: "/world-to-china/wechat-b2b-geo/"
 cluster: "World-to-China"

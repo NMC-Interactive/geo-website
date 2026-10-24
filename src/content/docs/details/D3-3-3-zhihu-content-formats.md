@@ -1,6 +1,7 @@
 ---
 title: "Zhihu Content Formats That Get Cited"
 url: "/world-to-china/baidu-baike-zhihu/zhihu-content-formats/"
+image: "/images/articles/cover-zhihu-content-formats.webp"
 detail: "D3-3-3"
 parent_spoke: "/world-to-china/baidu-baike-zhihu/"
 cluster: "World-to-China"

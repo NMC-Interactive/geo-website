@@ -1,6 +1,7 @@
 ---
 title: "ICP Bei An vs ICP Jing Ying: Which One?"
 url: "/world-to-china/icp-license-guide/icp-types/"
+image: "/images/articles/cover-icp-types.webp"
 detail: "D3-1-1"
 parent_spoke: "/world-to-china/icp-license-guide/"
 cluster: "World-to-China"

@@ -1,6 +1,7 @@
 ---
 title: "Building Media Relationships in Key Markets"
 url: "/china-to-world/international-pr-media/media-relationships/"
+image: "/images/articles/cover-media-relationships.webp"
 detail: "D4-3-2"
 parent_spoke: "/china-to-world/international-pr-media/"
 cluster: "China-to-World"

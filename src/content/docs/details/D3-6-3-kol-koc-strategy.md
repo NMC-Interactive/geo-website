@@ -1,6 +1,7 @@
 ---
 title: "KOL vs KOC: Choosing Your Strategy"
 url: "/world-to-china/cultural-nuances-marketing/kol-koc-strategy/"
+image: "/images/articles/cover-kol-koc-strategy.webp"
 detail: "D3-6-3"
 parent_spoke: "/world-to-china/cultural-nuances-marketing/"
 cluster: "World-to-China"

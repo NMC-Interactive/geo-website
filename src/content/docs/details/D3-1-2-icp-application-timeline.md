@@ -1,6 +1,7 @@
 ---
 title: "ICP Application Timeline & Requirements"
 url: "/world-to-china/icp-license-guide/icp-application-timeline/"
+image: "/images/articles/cover-icp-application-timeline.webp"
 detail: "D3-1-2"
 parent_spoke: "/world-to-china/icp-license-guide/"
 cluster: "World-to-China"

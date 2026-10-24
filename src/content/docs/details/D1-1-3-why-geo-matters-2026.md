@@ -1,6 +1,7 @@
 ---
 title: "Why GEO Matters in 2026: The Data"
 url: "/geo-fundamentals/what-is-geo/why-geo-matters-2026/"
+image: "/images/articles/cover-why-geo-matters-2026.webp"
 detail: "D1-1-3"
 parent_spoke: "/geo-fundamentals/what-is-geo/"
 cluster: "GEO Fundamentals"

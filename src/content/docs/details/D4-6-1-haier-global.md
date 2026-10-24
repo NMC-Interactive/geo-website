@@ -1,6 +1,7 @@
 ---
 title: "Case Study: Haier's Global Brand Building"
 url: "/china-to-world/case-studies-global-brands/haier-global/"
+image: "/images/articles/cover-haier-global.webp"
 detail: "D4-6-1"
 parent_spoke: "/china-to-world/case-studies-global-brands/"
 cluster: "China-to-World"

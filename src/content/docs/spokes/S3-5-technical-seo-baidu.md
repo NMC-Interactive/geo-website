@@ -1,6 +1,7 @@
 ---
 title: "Technical SEO for Baidu: Hosting, Speed & Schema"
 url: "/world-to-china/technical-seo-baidu/"
+image: "/images/articles/cover-technical-seo-baidu.webp"
 spoke: "S3-5"
 cluster: "World-to-China"
 parent_pillar: "/world-to-china-geo/"

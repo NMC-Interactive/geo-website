@@ -1,6 +1,7 @@
 ---
 title: "Building Entity Authority for GEO Success"
 url: "/geo-fundamentals/entity-authority-geo/"
+image: "/images/articles/cover-entity-authority-geo.webp"
 spoke: "S1-5"
 cluster: "GEO Fundamentals"
 parent_pillar: "/geo-fundamentals/"

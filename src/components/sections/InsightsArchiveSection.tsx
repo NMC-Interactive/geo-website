@@ -132,7 +132,7 @@ export default function InsightsArchiveSection({ spokes }: Props) {
                   style={{ borderRadius: '2px', height: '100%' }}>
                   <div className="relative overflow-hidden" style={{ height: article.isFeatured ? '60%' : '200px' }}>
                     <img
-                      src={clusterImage(article.cluster)}
+                      src={article.image ?? clusterImage(article.cluster)}
                       alt={article.title}
                       className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />

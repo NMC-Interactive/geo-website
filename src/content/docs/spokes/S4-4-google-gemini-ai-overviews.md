@@ -1,6 +1,7 @@
 ---
 title: "Optimizing for Google Gemini & AI Overviews"
 url: "/china-to-world/google-gemini-ai-overviews/"
+image: "/images/articles/cover-google-gemini-ai-overviews.webp"
 spoke: "S4-4"
 cluster: "China-to-World"
 parent_pillar: "/china-to-world-geo/"

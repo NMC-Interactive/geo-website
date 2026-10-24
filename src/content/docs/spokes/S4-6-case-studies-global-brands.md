@@ -1,6 +1,7 @@
 ---
 title: "Case Studies: Chinese Brands That Succeeded Globally"
 url: "/china-to-world/case-studies-global-brands/"
+image: "/images/articles/cover-case-studies-global-brands.webp"
 spoke: "S4-6"
 cluster: "China-to-World"
 parent_pillar: "/china-to-world-geo/"

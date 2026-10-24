@@ -1,6 +1,7 @@
 ---
 title: "Share of Model (SoM): Competitive Benchmarking"
 url: "/geo-fundamentals/geo-kpis-metrics/share-of-model/"
+image: "/images/articles/cover-share-of-model.webp"
 detail: "D1-3-2"
 parent_spoke: "/geo-fundamentals/geo-kpis-metrics/"
 cluster: "GEO Fundamentals"

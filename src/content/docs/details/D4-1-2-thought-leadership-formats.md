@@ -1,6 +1,7 @@
 ---
 title: "Thought Leadership Formats That Work Globally"
 url: "/china-to-world/english-content-strategy/thought-leadership-formats/"
+image: "/images/articles/cover-thought-leadership-formats.webp"
 detail: "D4-1-2"
 parent_spoke: "/china-to-world/english-content-strategy/"
 cluster: "China-to-World"

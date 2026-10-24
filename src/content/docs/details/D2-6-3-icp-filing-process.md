@@ -1,6 +1,7 @@
 ---
 title: "The ICP Filing Process Explained"
 url: "/china-ai-ecosystem/ai-regulations-china/icp-filing-process/"
+image: "/images/articles/cover-icp-filing-process.webp"
 detail: "D2-6-3"
 parent_spoke: "/china-ai-ecosystem/ai-regulations-china/"
 cluster: "China AI Ecosystem"

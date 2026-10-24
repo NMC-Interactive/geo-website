@@ -1,6 +1,7 @@
 ---
 title: "Creating Documents for Kimi Analysis"
 url: "/china-ai-ecosystem/kimi-moonshot/kimi-document-analysis/"
+image: "/images/articles/cover-kimi-document-analysis.webp"
 detail: "D2-5-2"
 parent_spoke: "/china-ai-ecosystem/kimi-moonshot/"
 cluster: "China AI Ecosystem"

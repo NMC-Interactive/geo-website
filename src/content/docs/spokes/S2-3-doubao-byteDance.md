@@ -1,6 +1,7 @@
 ---
 title: "Doubao & ByteDance: The Content Ecosystem Strategy"
 url: "/china-ai-ecosystem/doubao-byteDance/"
+image: "/images/articles/cover-doubao-byteDance.webp"
 spoke: "S2-3"
 cluster: "China AI Ecosystem"
 parent_pillar: "/china-ai-ecosystem/"

@@ -1,6 +1,7 @@
 ---
 title: "Building Authority on Baidu Baike & Zhihu"
 url: "/world-to-china/baidu-baike-zhihu/"
+image: "/images/articles/cover-baidu-baike-zhihu.webp"
 spoke: "S3-3"
 cluster: "World-to-China"
 parent_pillar: "/world-to-china-geo/"

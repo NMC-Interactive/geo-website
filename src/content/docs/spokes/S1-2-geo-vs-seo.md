@@ -1,6 +1,7 @@
 ---
 title: "GEO vs SEO: Key Differences & Strategic Implications"
 url: "/geo-fundamentals/geo-vs-seo/"
+image: "/images/articles/cover-geo-vs-seo.webp"
 spoke: "S1-2"
 cluster: "GEO Fundamentals"
 parent_pillar: "/geo-fundamentals/"

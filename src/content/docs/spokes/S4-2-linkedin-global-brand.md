@@ -1,6 +1,7 @@
 ---
 title: "Building a Global Brand on LinkedIn"
 url: "/china-to-world/linkedin-global-brand/"
+image: "/images/articles/cover-linkedin-global-brand.webp"
 spoke: "S4-2"
 cluster: "China-to-World"
 parent_pillar: "/china-to-world-geo/"

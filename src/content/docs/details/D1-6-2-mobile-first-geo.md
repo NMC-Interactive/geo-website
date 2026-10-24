@@ -1,6 +1,7 @@
 ---
 title: "Mobile-First Design & GEO Performance"
 url: "/geo-fundamentals/technical-foundations-geo/mobile-first-geo/"
+image: "/images/articles/cover-mobile-first-geo.webp"
 detail: "D1-6-2"
 parent_spoke: "/geo-fundamentals/technical-foundations-geo/"
 cluster: "GEO Fundamentals"

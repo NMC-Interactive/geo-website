@@ -1,6 +1,7 @@
 ---
 title: "Transcreation vs Translation: The Critical Difference"
 url: "/china-to-world/english-content-strategy/transcreation/"
+image: "/images/articles/cover-transcreation.webp"
 detail: "D4-1-1"
 parent_spoke: "/china-to-world/english-content-strategy/"
 cluster: "China-to-World"

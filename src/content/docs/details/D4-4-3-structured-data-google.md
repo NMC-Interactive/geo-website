@@ -1,6 +1,7 @@
 ---
 title: "Structured Data for Google AI"
 url: "/china-to-world/google-gemini-ai-overviews/structured-data-google/"
+image: "/images/articles/cover-structured-data-google.webp"
 detail: "D4-4-3"
 parent_spoke: "/china-to-world/google-gemini-ai-overviews/"
 cluster: "China-to-World"

@@ -1,6 +1,7 @@
 ---
 title: "Mini Programs as GEO Assets"
 url: "/world-to-china/wechat-b2b-geo/mini-programs-geo/"
+image: "/images/articles/cover-mini-programs-geo.webp"
 detail: "D3-4-2"
 parent_spoke: "/world-to-china/wechat-b2b-geo/"
 cluster: "World-to-China"

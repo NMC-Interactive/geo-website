@@ -1,6 +1,7 @@
 ---
 title: "DeepSeek Reasoning Models: How They Work"
 url: "/china-ai-ecosystem/deepseek-optimization/deepseek-reasoning-models/"
+image: "/images/articles/cover-deepseek-reasoning-models.webp"
 detail: "D2-2-1"
 parent_spoke: "/china-ai-ecosystem/deepseek-optimization/"
 cluster: "China AI Ecosystem"

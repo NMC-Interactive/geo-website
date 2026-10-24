@@ -1,6 +1,7 @@
 ---
 title: "World-to-China GEO: A Complete Market Entry & Optimization Playbook"
 url: "/world-to-china-geo/"
+image: "/images/articles/cover-world-to-china-geo.webp"
 pillar: 3
 cluster: "World-to-China"
 related_pillars: ["/geo-fundamentals/", "/china-ai-ecosystem/", "/china-to-world-geo/"]

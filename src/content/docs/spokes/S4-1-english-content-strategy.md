@@ -1,6 +1,7 @@
 ---
 title: "English Content Strategy for Chinese Brands Going Global"
 url: "/china-to-world/english-content-strategy/"
+image: "/images/articles/cover-english-content-strategy.webp"
 spoke: "S4-1"
 cluster: "China-to-World"
 parent_pillar: "/china-to-world-geo/"

@@ -1,6 +1,7 @@
 ---
 title: "FAQ & HowTo Schema for AI Extraction"
 url: "/geo-fundamentals/structured-data-geo/faq-howto-schema/"
+image: "/images/articles/cover-faq-howto-schema.webp"
 detail: "D1-4-2"
 parent_spoke: "/geo-fundamentals/structured-data-geo/"
 cluster: "GEO Fundamentals"

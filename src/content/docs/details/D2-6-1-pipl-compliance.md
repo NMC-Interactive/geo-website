@@ -1,6 +1,7 @@
 ---
 title: "PIPL Compliance for AI Content"
 url: "/china-ai-ecosystem/ai-regulations-china/pipl-compliance/"
+image: "/images/articles/cover-pipl-compliance.webp"
 detail: "D2-6-1"
 parent_spoke: "/china-ai-ecosystem/ai-regulations-china/"
 cluster: "China AI Ecosystem"

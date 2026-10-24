@@ -1,6 +1,7 @@
 ---
 title: "LinkedIn Content Strategy for Chinese Brands"
 url: "/china-to-world/linkedin-global-brand/linkedin-content-strategy/"
+image: "/images/articles/cover-linkedin-content-strategy.webp"
 detail: "D4-2-2"
 parent_spoke: "/china-to-world/linkedin-global-brand/"
 cluster: "China-to-World"

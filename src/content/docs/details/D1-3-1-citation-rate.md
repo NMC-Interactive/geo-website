@@ -1,6 +1,7 @@
 ---
 title: "Citation Rate: The #1 GEO Metric Explained"
 url: "/geo-fundamentals/geo-kpis-metrics/citation-rate/"
+image: "/images/articles/cover-citation-rate.webp"
 detail: "D1-3-1"
 parent_spoke: "/geo-fundamentals/geo-kpis-metrics/"
 cluster: "GEO Fundamentals"

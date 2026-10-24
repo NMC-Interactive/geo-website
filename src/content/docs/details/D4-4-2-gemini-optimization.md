@@ -1,6 +1,7 @@
 ---
 title: "Gemini-Specific Optimization Techniques"
 url: "/china-to-world/google-gemini-ai-overviews/gemini-optimization/"
+image: "/images/articles/cover-gemini-optimization.webp"
 detail: "D4-4-2"
 parent_spoke: "/china-to-world/google-gemini-ai-overviews/"
 cluster: "China-to-World"

@@ -1,6 +1,7 @@
 ---
 title: "Understanding AI Content Censorship in China"
 url: "/china-ai-ecosystem/ai-regulations-china/content-censorship-ai/"
+image: "/images/articles/cover-content-censorship-ai.webp"
 detail: "D2-6-2"
 parent_spoke: "/china-ai-ecosystem/ai-regulations-china/"
 cluster: "China AI Ecosystem"

@@ -1,6 +1,7 @@
 ---
 title: "SEO & GEO Synergy: Running Both in Parallel"
 url: "/geo-fundamentals/geo-vs-seo/seo-geo-synergy/"
+image: "/images/articles/cover-seo-geo-synergy.webp"
 detail: "D1-2-3"
 parent_spoke: "/geo-fundamentals/geo-vs-seo/"
 cluster: "GEO Fundamentals"

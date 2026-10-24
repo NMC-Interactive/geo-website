@@ -1,6 +1,7 @@
 ---
 title: "Content Localization for China: Beyond Translation"
 url: "/world-to-china/content-localization-china/"
+image: "/images/articles/cover-content-localization-china.webp"
 spoke: "S3-2"
 cluster: "World-to-China"
 parent_pillar: "/world-to-china-geo/"

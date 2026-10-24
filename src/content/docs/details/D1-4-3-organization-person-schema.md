@@ -1,6 +1,7 @@
 ---
 title: "Organization & Person Schema for Entities"
 url: "/geo-fundamentals/structured-data-geo/organization-person-schema/"
+image: "/images/articles/cover-organization-person-schema.webp"
 detail: "D1-4-3"
 parent_spoke: "/geo-fundamentals/structured-data-geo/"
 cluster: "GEO Fundamentals"

@@ -1,6 +1,7 @@
 ---
 title: "WeChat Video Channels for Brand Visibility"
 url: "/world-to-china/wechat-b2b-geo/wechat-video-channels/"
+image: "/images/articles/cover-wechat-video-channels.webp"
 detail: "D3-4-3"
 parent_spoke: "/world-to-china/wechat-b2b-geo/"
 cluster: "World-to-China"

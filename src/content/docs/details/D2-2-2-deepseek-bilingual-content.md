@@ -1,6 +1,7 @@
 ---
 title: "Bilingual Content Strategy for DeepSeek"
 url: "/china-ai-ecosystem/deepseek-optimization/deepseek-bilingual-content/"
+image: "/images/articles/cover-deepseek-bilingual-content.webp"
 detail: "D2-2-2"
 parent_spoke: "/china-ai-ecosystem/deepseek-optimization/"
 cluster: "China AI Ecosystem"

@@ -1,6 +1,7 @@
 ---
 title: "Creating Thought Leadership That Gets Cited by AI"
 url: "/china-to-world/thought-leadership-citations/"
+image: "/images/articles/cover-thought-leadership-citations.webp"
 spoke: "S4-5"
 cluster: "China-to-World"
 parent_pillar: "/china-to-world-geo/"

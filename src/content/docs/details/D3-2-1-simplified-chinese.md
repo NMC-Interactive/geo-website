@@ -1,6 +1,7 @@
 ---
 title: "Simplified Chinese: Beyond Translation"
 url: "/world-to-china/content-localization-china/simplified-chinese/"
+image: "/images/articles/cover-simplified-chinese.webp"
 detail: "D3-2-1"
 parent_spoke: "/world-to-china/content-localization-china/"
 cluster: "World-to-China"

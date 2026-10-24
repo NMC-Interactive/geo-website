@@ -1,6 +1,7 @@
 ---
 title: "Multimodal Optimization for Doubao"
 url: "/china-ai-ecosystem/doubao-byteDance/doubao-multimodal/"
+image: "/images/articles/cover-doubao-multimodal.webp"
 detail: "D2-3-3"
 parent_spoke: "/china-ai-ecosystem/doubao-byteDance/"
 cluster: "China AI Ecosystem"

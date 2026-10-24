@@ -1,6 +1,7 @@
 ---
 title: "Measuring AI-Referred Traffic & Conversions"
 url: "/geo-fundamentals/geo-kpis-metrics/ai-referred-traffic/"
+image: "/images/articles/cover-ai-referred-traffic.webp"
 detail: "D1-3-3"
 parent_spoke: "/geo-fundamentals/geo-kpis-metrics/"
 cluster: "GEO Fundamentals"

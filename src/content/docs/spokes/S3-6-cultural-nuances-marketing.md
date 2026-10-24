@@ -1,6 +1,7 @@
 ---
 title: "Cultural Nuances in Chinese Digital Marketing"
 url: "/world-to-china/cultural-nuances-marketing/"
+image: "/images/articles/cover-cultural-nuances-marketing.webp"
 spoke: "S3-6"
 cluster: "World-to-China"
 parent_pillar: "/world-to-china-geo/"

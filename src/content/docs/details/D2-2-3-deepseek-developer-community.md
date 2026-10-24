@@ -1,6 +1,7 @@
 ---
 title: "Engaging the DeepSeek Developer Community"
 url: "/china-ai-ecosystem/deepseek-optimization/deepseek-developer-community/"
+image: "/images/articles/cover-deepseek-developer-community.webp"
 detail: "D2-2-3"
 parent_spoke: "/china-ai-ecosystem/deepseek-optimization/"
 cluster: "China AI Ecosystem"

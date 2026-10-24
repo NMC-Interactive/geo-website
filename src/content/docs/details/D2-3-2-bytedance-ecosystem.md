@@ -1,6 +1,7 @@
 ---
 title: "The ByteDance Ecosystem: Integration Points"
 url: "/china-ai-ecosystem/doubao-byteDance/bytedance-ecosystem/"
+image: "/images/articles/cover-bytedance-ecosystem.webp"
 detail: "D2-3-2"
 parent_spoke: "/china-ai-ecosystem/doubao-byteDance/"
 cluster: "China AI Ecosystem"

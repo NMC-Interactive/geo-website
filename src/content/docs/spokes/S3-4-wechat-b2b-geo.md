@@ -1,6 +1,7 @@
 ---
 title: "WeChat for B2B GEO: Public Accounts & Mini Programs"
 url: "/world-to-china/wechat-b2b-geo/"
+image: "/images/articles/cover-wechat-b2b-geo.webp"
 spoke: "S3-4"
 cluster: "World-to-China"
 parent_pillar: "/world-to-china-geo/"

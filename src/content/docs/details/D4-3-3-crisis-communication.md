@@ -1,6 +1,7 @@
 ---
 title: "Crisis Communication for Global Brands"
 url: "/china-to-world/international-pr-media/crisis-communication/"
+image: "/images/articles/cover-crisis-communication.webp"
 detail: "D4-3-3"
 parent_spoke: "/china-to-world/international-pr-media/"
 cluster: "China-to-World"

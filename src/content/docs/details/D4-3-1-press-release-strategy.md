@@ -1,6 +1,7 @@
 ---
 title: "Press Release Strategy for Global Media"
 url: "/china-to-world/international-pr-media/press-release-strategy/"
+image: "/images/articles/cover-press-release-strategy.webp"
 detail: "D4-3-1"
 parent_spoke: "/china-to-world/international-pr-media/"
 cluster: "China-to-World"

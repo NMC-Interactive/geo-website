@@ -1,6 +1,7 @@
 ---
 title: "Keywords vs Entities: How AI Understands Content"
 url: "/geo-fundamentals/geo-vs-seo/keywords-vs-entities/"
+image: "/images/articles/cover-keywords-vs-entities.webp"
 detail: "D1-2-2"
 parent_spoke: "/geo-fundamentals/geo-vs-seo/"
 cluster: "GEO Fundamentals"

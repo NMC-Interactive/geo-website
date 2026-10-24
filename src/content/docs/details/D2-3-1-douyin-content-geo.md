@@ -1,6 +1,7 @@
 ---
 title: "Douyin Content Strategy for Doubao Visibility"
 url: "/china-ai-ecosystem/doubao-byteDance/douyin-content-geo/"
+image: "/images/articles/cover-douyin-content-geo.webp"
 detail: "D2-3-1"
 parent_spoke: "/china-ai-ecosystem/doubao-byteDance/"
 cluster: "China AI Ecosystem"

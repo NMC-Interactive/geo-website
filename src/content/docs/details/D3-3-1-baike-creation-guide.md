@@ -1,6 +1,7 @@
 ---
 title: "How to Create a Baidu Baike Entry"
 url: "/world-to-china/baidu-baike-zhihu/baike-creation-guide/"
+image: "/images/articles/cover-baike-creation-guide.webp"
 detail: "D3-3-1"
 parent_spoke: "/world-to-china/baidu-baike-zhihu/"
 cluster: "World-to-China"

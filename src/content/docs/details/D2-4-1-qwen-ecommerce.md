@@ -1,6 +1,7 @@
 ---
 title: "Qwen for E-Commerce & Product Content"
 url: "/china-ai-ecosystem/qwen-alibaba/qwen-ecommerce/"
+image: "/images/articles/cover-qwen-ecommerce.webp"
 detail: "D2-4-1"
 parent_spoke: "/china-ai-ecosystem/qwen-alibaba/"
 cluster: "China AI Ecosystem"

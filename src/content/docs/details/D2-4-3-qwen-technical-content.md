@@ -1,6 +1,7 @@
 ---
 title: "Technical Content Optimization for Qwen"
 url: "/china-ai-ecosystem/qwen-alibaba/qwen-technical-content/"
+image: "/images/articles/cover-qwen-technical-content.webp"
 detail: "D2-4-3"
 parent_spoke: "/china-ai-ecosystem/qwen-alibaba/"
 cluster: "China AI Ecosystem"

@@ -1,6 +1,7 @@
 ---
 title: "Zhihu Authority Building: A Systematic Approach"
 url: "/world-to-china/baidu-baike-zhihu/zhihu-authority/"
+image: "/images/articles/cover-zhihu-authority.webp"
 detail: "D3-3-2"
 parent_spoke: "/world-to-china/baidu-baike-zhihu/"
 cluster: "World-to-China"

@@ -1,6 +1,7 @@
 ---
 title: "What Is Generative Engine Optimization (GEO)?"
 url: "/geo-fundamentals/what-is-geo/"
+image: "/images/articles/cover-what-is-geo.webp"
 spoke: "S1-1"
 cluster: "GEO Fundamentals"
 parent_pillar: "/geo-fundamentals/"

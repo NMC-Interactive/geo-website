@@ -1,6 +1,7 @@
 ---
 title: "The Complete llms.txt Implementation Guide"
 url: "/geo-fundamentals/technical-foundations-geo/llms-txt-guide/"
+image: "/images/articles/cover-llms-txt-guide.webp"
 detail: "D1-6-3"
 parent_spoke: "/geo-fundamentals/technical-foundations-geo/"
 cluster: "GEO Fundamentals"

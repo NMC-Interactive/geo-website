@@ -1,6 +1,7 @@
 ---
 title: "The Chinese AI Search Ecosystem: Big Six Platforms & Optimization Strategies"
 url: "/china-ai-ecosystem/"
+image: "/images/articles/cover-china-ai-ecosystem.webp"
 pillar: 2
 cluster: "China AI Ecosystem"
 related_pillars: ["/geo-fundamentals/", "/world-to-china-geo/", "/china-to-world-geo/"]

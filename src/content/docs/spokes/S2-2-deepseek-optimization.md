@@ -1,6 +1,7 @@
 ---
 title: "DeepSeek Optimization: Best Practices for Technical Content"
 url: "/china-ai-ecosystem/deepseek-optimization/"
+image: "/images/articles/cover-deepseek-optimization.webp"
 spoke: "S2-2"
 cluster: "China AI Ecosystem"
 parent_pillar: "/china-ai-ecosystem/"

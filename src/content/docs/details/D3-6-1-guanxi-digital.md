@@ -1,6 +1,7 @@
 ---
 title: "Guanxi in the Digital Age"
 url: "/world-to-china/cultural-nuances-marketing/guanxi-digital/"
+image: "/images/articles/cover-guanxi-digital.webp"
 detail: "D3-6-1"
 parent_spoke: "/world-to-china/cultural-nuances-marketing/"
 cluster: "World-to-China"

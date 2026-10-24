@@ -1,6 +1,7 @@
 ---
 title: "China-to-World GEO: Building Global AI Visibility for Chinese Brands"
 url: "/china-to-world-geo/"
+image: "/images/articles/cover-china-to-world-geo.webp"
 pillar: 4
 cluster: "China-to-World"
 related_pillars: ["/geo-fundamentals/", "/china-ai-ecosystem/", "/world-to-china-geo/"]

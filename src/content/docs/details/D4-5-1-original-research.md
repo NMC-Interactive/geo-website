@@ -1,6 +1,7 @@
 ---
 title: "Publishing Original Research for AI Citations"
 url: "/china-to-world/thought-leadership-citations/original-research/"
+image: "/images/articles/cover-original-research.webp"
 detail: "D4-5-1"
 parent_spoke: "/china-to-world/thought-leadership-citations/"
 cluster: "China-to-World"

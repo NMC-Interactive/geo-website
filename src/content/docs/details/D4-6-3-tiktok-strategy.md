@@ -1,6 +1,7 @@
 ---
 title: "Case Study: TikTok's Global Content Strategy"
 url: "/china-to-world/case-studies-global-brands/tiktok-strategy/"
+image: "/images/articles/cover-tiktok-strategy.webp"
 detail: "D4-6-3"
 parent_spoke: "/china-to-world/case-studies-global-brands/"
 cluster: "China-to-World"

@@ -1,6 +1,7 @@
 ---
 title: "Kimi's Long-Context Window: Content Implications"
 url: "/china-ai-ecosystem/kimi-moonshot/kimi-long-context/"
+image: "/images/articles/cover-kimi-long-context.webp"
 detail: "D2-5-1"
 parent_spoke: "/china-ai-ecosystem/kimi-moonshot/"
 cluster: "China AI Ecosystem"

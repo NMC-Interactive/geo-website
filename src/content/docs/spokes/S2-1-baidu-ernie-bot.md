@@ -1,6 +1,7 @@
 ---
 title: "Baidu Ernie Bot: Optimization Guide for Baidu AI Search"
 url: "/china-ai-ecosystem/baidu-ernie-bot/"
+image: "/images/articles/cover-baidu-ernie-bot.webp"
 spoke: "S2-1"
 cluster: "China AI Ecosystem"
 parent_pillar: "/china-ai-ecosystem/"

@@ -1,6 +1,7 @@
 ---
 title: "Alibaba Cloud & B2B GEO Opportunities"
 url: "/china-ai-ecosystem/qwen-alibaba/alibaba-cloud-geo/"
+image: "/images/articles/cover-alibaba-cloud-geo.webp"
 detail: "D2-4-2"
 parent_spoke: "/china-ai-ecosystem/qwen-alibaba/"
 cluster: "China AI Ecosystem"

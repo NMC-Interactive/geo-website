@@ -1,6 +1,7 @@
 ---
 title: "Expert Roundups: Leveraging Industry Authority"
 url: "/china-to-world/thought-leadership-citations/expert-roundups/"
+image: "/images/articles/cover-expert-roundups.webp"
 detail: "D4-5-3"
 parent_spoke: "/china-to-world/thought-leadership-citations/"
 cluster: "China-to-World"

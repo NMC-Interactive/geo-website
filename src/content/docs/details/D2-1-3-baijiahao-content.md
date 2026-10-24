@@ -1,6 +1,7 @@
 ---
 title: "Baijiahao: Baidu's Content Publishing Platform"
 url: "/china-ai-ecosystem/baidu-ernie-bot/baijiahao-content/"
+image: "/images/articles/cover-baijiahao-content.webp"
 detail: "D2-1-3"
 parent_spoke: "/china-ai-ecosystem/baidu-ernie-bot/"
 cluster: "China AI Ecosystem"

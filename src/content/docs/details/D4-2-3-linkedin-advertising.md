@@ -1,6 +1,7 @@
 ---
 title: "LinkedIn Advertising for B2B Lead Generation"
 url: "/china-to-world/linkedin-global-brand/linkedin-advertising/"
+image: "/images/articles/cover-linkedin-advertising.webp"
 detail: "D4-2-3"
 parent_spoke: "/china-to-world/linkedin-global-brand/"
 cluster: "China-to-World"

@@ -1,6 +1,7 @@
 ---
 title: "Structured Data & Schema Markup for GEO"
 url: "/geo-fundamentals/structured-data-geo/"
+image: "/images/articles/cover-structured-data-geo.webp"
 spoke: "S1-4"
 cluster: "GEO Fundamentals"
 parent_pillar: "/geo-fundamentals/"

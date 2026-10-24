@@ -1,6 +1,7 @@
 ---
 title: "Research & Whitepaper Strategy for Kimi"
 url: "/china-ai-ecosystem/kimi-moonshot/kimi-research-content/"
+image: "/images/articles/cover-kimi-research-content.webp"
 detail: "D2-5-3"
 parent_spoke: "/china-ai-ecosystem/kimi-moonshot/"
 cluster: "China AI Ecosystem"

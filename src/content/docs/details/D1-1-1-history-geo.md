@@ -1,6 +1,7 @@
 ---
 title: "The History and Evolution of GEO"
 url: "/geo-fundamentals/what-is-geo/history-geo/"
+image: "/images/articles/cover-history-geo.webp"
 detail: "D1-1-1"
 parent_spoke: "/geo-fundamentals/what-is-geo/"
 cluster: "GEO Fundamentals"

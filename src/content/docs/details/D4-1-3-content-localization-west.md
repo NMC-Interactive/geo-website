@@ -1,6 +1,7 @@
 ---
 title: "Localizing Content for Western Audiences"
 url: "/china-to-world/english-content-strategy/content-localization-west/"
+image: "/images/articles/cover-content-localization-west.webp"
 detail: "D4-1-3"
 parent_spoke: "/china-to-world/english-content-strategy/"
 cluster: "China-to-World"

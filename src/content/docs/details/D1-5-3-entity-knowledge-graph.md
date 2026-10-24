@@ -1,6 +1,7 @@
 ---
 title: "Building Your Entity Knowledge Graph"
 url: "/geo-fundamentals/entity-authority-geo/entity-knowledge-graph/"
+image: "/images/articles/cover-entity-knowledge-graph.webp"
 detail: "D1-5-3"
 parent_spoke: "/geo-fundamentals/entity-authority-geo/"
 cluster: "GEO Fundamentals"

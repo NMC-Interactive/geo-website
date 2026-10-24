@@ -1,6 +1,7 @@
 ---
 title: "Data-Driven Content: Benchmarks & Reports"
 url: "/china-to-world/thought-leadership-citations/data-driven-content/"
+image: "/images/articles/cover-data-driven-content.webp"
 detail: "D4-5-2"
 parent_spoke: "/china-to-world/thought-leadership-citations/"
 cluster: "China-to-World"

@@ -1,6 +1,7 @@
 ---
 title: "Choosing a Hosting Provider in China"
 url: "/world-to-china/icp-license-guide/hosting-providers-china/"
+image: "/images/articles/cover-hosting-providers-china.webp"
 detail: "D3-1-3"
 parent_spoke: "/world-to-china/icp-license-guide/"
 cluster: "World-to-China"

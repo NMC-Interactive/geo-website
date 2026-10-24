@@ -1,6 +1,7 @@
 ---
 title: "Rankings vs Citations: The Fundamental Shift"
 url: "/geo-fundamentals/geo-vs-seo/rankings-vs-citations/"
+image: "/images/articles/cover-rankings-vs-citations.webp"
 detail: "D1-2-1"
 parent_spoke: "/geo-fundamentals/geo-vs-seo/"
 cluster: "GEO Fundamentals"

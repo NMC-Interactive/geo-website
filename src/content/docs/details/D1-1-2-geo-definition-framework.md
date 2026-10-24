@@ -1,6 +1,7 @@
 ---
 title: "GEO Definition: The 5-Pillar Framework"
 url: "/geo-fundamentals/what-is-geo/geo-definition-framework/"
+image: "/images/articles/cover-geo-definition-framework.webp"
 detail: "D1-1-2"
 parent_spoke: "/geo-fundamentals/what-is-geo/"
 cluster: "GEO Fundamentals"

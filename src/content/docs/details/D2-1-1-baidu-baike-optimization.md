@@ -1,6 +1,7 @@
 ---
 title: "Baidu Baike: Creating & Optimizing Your Entry"
 url: "/china-ai-ecosystem/baidu-ernie-bot/baidu-baike-optimization/"
+image: "/images/articles/cover-baidu-baike-optimization.webp"
 detail: "D2-1-1"
 parent_spoke: "/china-ai-ecosystem/baidu-ernie-bot/"
 cluster: "China AI Ecosystem"

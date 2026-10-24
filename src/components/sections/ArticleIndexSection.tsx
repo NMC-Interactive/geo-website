@@ -29,7 +29,7 @@ export default function ArticleIndexSection({ pillars }: Props) {
         id: String(i + 1).padStart(2, '0'),
         title: p.title.toUpperCase(),
         summary: p.excerpt ?? `Explore the complete guide to ${p.cluster}.`,
-        image: clusterImage(p.cluster),
+        image: p.image ?? clusterImage(p.cluster),
         url: p.url,
       }))
     : FALLBACK_STRIPS

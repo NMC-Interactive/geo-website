@@ -1,6 +1,7 @@
 ---
 title: "Qwen & Alibaba: E-Commerce & Cloud AI Optimization"
 url: "/china-ai-ecosystem/qwen-alibaba/"
+image: "/images/articles/cover-qwen-alibaba.webp"
 spoke: "S2-4"
 cluster: "China AI Ecosystem"
 parent_pillar: "/china-ai-ecosystem/"

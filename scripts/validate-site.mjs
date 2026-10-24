@@ -1,11 +1,12 @@
-import { readFileSync, existsSync } from 'node:fs';
-import { resolve } from 'node:path';
+import { readFileSync, existsSync, readdirSync } from 'node:fs';
+import { resolve, relative } from 'node:path';
 
 const root = process.cwd();
 const dist = resolve(root, 'dist');
 const expectedOrigin = process.env.SITE_URL || 'https://geo.nmc-interactive.com';
 
 const failures = [];
+const articleImages = new Map();
 
 function assert(condition, message) {
   if (!condition) failures.push(message);
@@ -15,6 +16,31 @@ function read(relativePath) {
   const filePath = resolve(dist, relativePath);
   assert(existsSync(filePath), `Missing build artifact: dist/${relativePath}`);
   return existsSync(filePath) ? readFileSync(filePath, 'utf8') : '';
+}
+
+function validateArticleImages(directory = resolve(root, 'src/content/docs')) {
+  for (const entry of readdirSync(directory, { withFileTypes: true })) {
+    const filePath = resolve(directory, entry.name);
+    if (entry.isDirectory()) {
+      validateArticleImages(filePath);
+      continue;
+    }
+    if (!/\.mdx?$/.test(entry.name)) continue;
+
+    const content = readFileSync(filePath, 'utf8');
+    const frontmatter = content.match(/^---\r?\n([\s\S]*?)\r?\n---/);
+    const image = frontmatter?.[1].match(/^image:\s*["'](.*?)["']\s*$/m)?.[1];
+    const label = relative(root, filePath);
+    assert(Boolean(image), `${label} is missing its page-specific image.`);
+    if (!image) continue;
+
+    assert(!articleImages.has(image), `${label} reuses article image ${image} from ${articleImages.get(image)}.`);
+    articleImages.set(image, label);
+    assert(
+      existsSync(resolve(root, 'public', image.replace(/^\/+/, ''))),
+      `${label} references a missing image asset: ${image}`
+    );
+  }
 }
 
 const requiredArtifacts = [
@@ -29,6 +55,8 @@ const requiredArtifacts = [
 for (const artifact of requiredArtifacts) {
   assert(existsSync(resolve(dist, artifact)), `Missing build artifact: dist/${artifact}`);
 }
+
+validateArticleImages();
 
 const sitemapXml = read('sitemap.xml');
 const robotsTxt = read('robots.txt');

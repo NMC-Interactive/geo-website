@@ -1,6 +1,7 @@
 ---
 title: "GEO KPIs & Metrics: Measuring AI Search Performance"
 url: "/geo-fundamentals/geo-kpis-metrics/"
+image: "/images/articles/cover-geo-kpis-metrics.webp"
 spoke: "S1-3"
 cluster: "GEO Fundamentals"
 parent_pillar: "/geo-fundamentals/"

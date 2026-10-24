@@ -1,6 +1,7 @@
 ---
 title: "ICP License: Step-by-Step Guide for Foreign Companies"
 url: "/world-to-china/icp-license-guide/"
+image: "/images/articles/cover-icp-license-guide.webp"
 spoke: "S3-1"
 cluster: "World-to-China"
 parent_pillar: "/world-to-china-geo/"

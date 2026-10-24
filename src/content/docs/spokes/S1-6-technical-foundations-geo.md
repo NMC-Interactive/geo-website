@@ -1,6 +1,7 @@
 ---
 title: "Technical Foundations: Crawlability, Speed & Mobile-First for GEO"
 url: "/geo-fundamentals/technical-foundations-geo/"
+image: "/images/articles/cover-technical-foundations-geo.webp"
 spoke: "S1-6"
 cluster: "GEO Fundamentals"
 parent_pillar: "/geo-fundamentals/"

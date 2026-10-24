@@ -1,6 +1,7 @@
 ---
 title: "JSON-LD Implementation: A Complete Tutorial"
 url: "/geo-fundamentals/structured-data-geo/json-ld-implementation/"
+image: "/images/articles/cover-json-ld-implementation.webp"
 detail: "D1-4-1"
 parent_spoke: "/geo-fundamentals/structured-data-geo/"
 cluster: "GEO Fundamentals"

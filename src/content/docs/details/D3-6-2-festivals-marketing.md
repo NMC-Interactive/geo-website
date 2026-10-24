@@ -1,6 +1,7 @@
 ---
 title: "Chinese Festival Marketing Calendar"
 url: "/world-to-china/cultural-nuances-marketing/festivals-marketing/"
+image: "/images/articles/cover-festivals-marketing.webp"
 detail: "D3-6-2"
 parent_spoke: "/world-to-china/cultural-nuances-marketing/"
 cluster: "World-to-China"

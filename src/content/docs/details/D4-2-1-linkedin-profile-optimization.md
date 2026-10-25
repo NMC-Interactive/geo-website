@@ -5,6 +5,8 @@ image: "/images/articles/cover-linkedin-profile-optimization.webp"
 detail: "D4-2-1"
 parent_spoke: "/china-to-world/linkedin-global-brand/"
 cluster: "China-to-World"
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # LinkedIn Profile Optimization for Executives

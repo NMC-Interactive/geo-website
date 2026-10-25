@@ -5,6 +5,8 @@ image: "/images/articles/cover-structured-data-google.webp"
 detail: "D4-4-3"
 parent_spoke: "/china-to-world/google-gemini-ai-overviews/"
 cluster: "China-to-World"
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # Structured Data for Google AI

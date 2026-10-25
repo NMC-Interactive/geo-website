@@ -5,6 +5,8 @@ image: "/images/articles/cover-geo-kpis-metrics.webp"
 spoke: "S1-3"
 cluster: "GEO Fundamentals"
 parent_pillar: "/geo-fundamentals/"
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # GEO KPIs & Metrics: Measuring AI Search Performance

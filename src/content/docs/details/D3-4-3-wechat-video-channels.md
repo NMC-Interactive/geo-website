@@ -5,6 +5,8 @@ image: "/images/articles/cover-wechat-video-channels.webp"
 detail: "D3-4-3"
 parent_spoke: "/world-to-china/wechat-b2b-geo/"
 cluster: "World-to-China"
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # WeChat Video Channels for Brand Visibility

@@ -5,6 +5,8 @@ image: "/images/articles/cover-simplified-chinese.webp"
 detail: "D3-2-1"
 parent_spoke: "/world-to-china/content-localization-china/"
 cluster: "World-to-China"
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # Simplified Chinese: Beyond Translation

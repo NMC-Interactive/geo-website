@@ -5,6 +5,8 @@ image: "/images/articles/cover-zhihu-content-formats.webp"
 detail: "D3-3-3"
 parent_spoke: "/world-to-china/baidu-baike-zhihu/"
 cluster: "World-to-China"
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # Zhihu Content Formats That Get Cited

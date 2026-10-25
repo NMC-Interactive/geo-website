@@ -5,6 +5,8 @@ image: "/images/articles/cover-google-gemini-ai-overviews.webp"
 spoke: "S4-4"
 cluster: "China-to-World"
 parent_pillar: "/china-to-world-geo/"
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # Optimizing for Google Gemini & AI Overviews

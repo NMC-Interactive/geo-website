@@ -5,6 +5,8 @@ image: "/images/articles/cover-structured-data-geo.webp"
 spoke: "S1-4"
 cluster: "GEO Fundamentals"
 parent_pillar: "/geo-fundamentals/"
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # Structured Data & Schema Markup for GEO

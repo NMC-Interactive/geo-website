@@ -5,6 +5,8 @@ image: "/images/articles/cover-thought-leadership-formats.webp"
 detail: "D4-1-2"
 parent_spoke: "/china-to-world/english-content-strategy/"
 cluster: "China-to-World"
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # Thought Leadership Formats That Work Globally

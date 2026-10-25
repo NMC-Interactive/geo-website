@@ -5,6 +5,8 @@ image: "/images/articles/cover-baidu-webmaster-tools.webp"
 detail: "D3-5-3"
 parent_spoke: "/world-to-china/technical-seo-baidu/"
 cluster: "World-to-China"
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # Baidu Webmaster Tools: Complete Setup

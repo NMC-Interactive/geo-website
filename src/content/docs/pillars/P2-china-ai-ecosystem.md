@@ -13,6 +13,8 @@ related_spokes: [
   "/china-ai-ecosystem/kimi-moonshot/",
   "/china-ai-ecosystem/ai-regulations-china/"
 ]
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # The Chinese AI Search Ecosystem: Big Six Platforms & Optimization Strategies

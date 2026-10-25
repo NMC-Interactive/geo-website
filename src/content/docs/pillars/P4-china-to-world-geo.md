@@ -13,6 +13,8 @@ related_spokes: [
   "/china-to-world/thought-leadership-citations/",
   "/china-to-world/case-studies-global-brands/"
 ]
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # China-to-World GEO: Building Global AI Visibility for Chinese Brands

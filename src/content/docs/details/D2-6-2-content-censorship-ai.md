@@ -5,6 +5,8 @@ image: "/images/articles/cover-content-censorship-ai.webp"
 detail: "D2-6-2"
 parent_spoke: "/china-ai-ecosystem/ai-regulations-china/"
 cluster: "China AI Ecosystem"
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # Understanding AI Content Censorship in China

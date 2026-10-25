@@ -5,6 +5,8 @@ image: "/images/articles/cover-cultural-nuances-marketing.webp"
 spoke: "S3-6"
 cluster: "World-to-China"
 parent_pillar: "/world-to-china-geo/"
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # Cultural Nuances in Chinese Digital Marketing

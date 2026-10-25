@@ -5,6 +5,8 @@ image: "/images/articles/cover-entity-authority-geo.webp"
 spoke: "S1-5"
 cluster: "GEO Fundamentals"
 parent_pillar: "/geo-fundamentals/"
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # Building Entity Authority for GEO Success

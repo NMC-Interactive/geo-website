@@ -1,6 +1,6 @@
 import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
-import { flattenCanonicalUrls, getUtilityPages } from '../utils/content-index';
+import { buildSitemapSections, getUtilityPages } from '../utils/content-index';
 
 function escapeXml(value: string): string {
   return value
@@ -11,20 +11,44 @@ function escapeXml(value: string): string {
     .replaceAll("'", '&apos;');
 }
 
+function toDateString(value: Date | undefined): string | undefined {
+  return value ? value.toISOString().slice(0, 10) : undefined;
+}
+
 export const GET: APIRoute = async ({ site, url }) => {
   const docs = await getCollection('docs');
   const origin = (site ?? url).origin;
-  const pageUrls = [
-    ...getUtilityPages().map((page) => page.url),
-    ...flattenCanonicalUrls(docs),
+
+  // Freshness signal: newest content update drives the utility pages' lastmod.
+  const newest = docs.reduce<Date | undefined>((max, entry) => {
+    const candidate = entry.data.updatedDate ?? entry.data.pubDate;
+    if (!candidate) return max;
+    return max && max > candidate ? max : candidate;
+  }, undefined);
+  const siteLastmod = toDateString(newest);
+
+  const lastmodByUrl = new Map(
+    docs.map((entry) => [entry.data.url, toDateString(entry.data.updatedDate ?? entry.data.pubDate)]),
+  );
+
+  // Cluster-ordered URL list: utility pages first, then pillar → spokes → details.
+  const clusterUrls = buildSitemapSections(docs).flatMap(({ pillar, spokes }) => [
+    pillar.data.url,
+    ...spokes.flatMap(({ spoke, details }) => [spoke.data.url, ...details.map((detail) => detail.data.url)]),
+  ]);
+
+  const urls: Array<{ path: string; lastmod?: string }> = [
+    ...getUtilityPages().map((page) => ({ path: page.url, lastmod: siteLastmod })),
+    ...clusterUrls.map((path) => ({ path, lastmod: lastmodByUrl.get(path) })),
   ];
 
   const xml = [
     '<?xml version="1.0" encoding="UTF-8"?>',
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
-    ...pageUrls.map((path) => {
+    ...urls.map(({ path, lastmod }) => {
       const loc = escapeXml(new URL(path, origin).href);
-      return `<url><loc>${loc}</loc></url>`;
+      const lastmodTag = lastmod ? `<lastmod>${escapeXml(lastmod)}</lastmod>` : '';
+      return `<url><loc>${loc}</loc>${lastmodTag}</url>`;
     }),
     '</urlset>',
     '',

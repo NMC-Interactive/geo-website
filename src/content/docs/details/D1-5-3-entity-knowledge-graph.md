@@ -5,6 +5,8 @@ image: "/images/articles/cover-entity-knowledge-graph.webp"
 detail: "D1-5-3"
 parent_spoke: "/geo-fundamentals/entity-authority-geo/"
 cluster: "GEO Fundamentals"
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # Building Your Entity Knowledge Graph

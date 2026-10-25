@@ -5,6 +5,8 @@ image: "/images/articles/cover-alibaba-cloud-geo.webp"
 detail: "D2-4-2"
 parent_spoke: "/china-ai-ecosystem/qwen-alibaba/"
 cluster: "China AI Ecosystem"
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # Alibaba Cloud & B2B GEO Opportunities

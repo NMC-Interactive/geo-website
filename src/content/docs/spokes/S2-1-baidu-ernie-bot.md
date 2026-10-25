@@ -5,6 +5,8 @@ image: "/images/articles/cover-baidu-ernie-bot.webp"
 spoke: "S2-1"
 cluster: "China AI Ecosystem"
 parent_pillar: "/china-ai-ecosystem/"
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # Baidu Ernie Bot: Optimization Guide for Baidu AI Search

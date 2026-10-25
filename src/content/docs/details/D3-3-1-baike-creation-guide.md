@@ -5,6 +5,8 @@ image: "/images/articles/cover-baike-creation-guide.webp"
 detail: "D3-3-1"
 parent_spoke: "/world-to-china/baidu-baike-zhihu/"
 cluster: "World-to-China"
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # How to Create a Baidu Baike Entry

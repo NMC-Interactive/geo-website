@@ -5,6 +5,8 @@ image: "/images/articles/cover-hosting-providers-china.webp"
 detail: "D3-1-3"
 parent_spoke: "/world-to-china/icp-license-guide/"
 cluster: "World-to-China"
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # Choosing a Hosting Provider in China

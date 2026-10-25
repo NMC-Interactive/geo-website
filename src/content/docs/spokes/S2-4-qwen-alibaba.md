@@ -5,6 +5,8 @@ image: "/images/articles/cover-qwen-alibaba.webp"
 spoke: "S2-4"
 cluster: "China AI Ecosystem"
 parent_pillar: "/china-ai-ecosystem/"
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # Qwen & Alibaba: E-Commerce & Cloud AI Optimization

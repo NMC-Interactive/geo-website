@@ -5,6 +5,8 @@ image: "/images/articles/cover-baidu-baike-zhihu.webp"
 spoke: "S3-3"
 cluster: "World-to-China"
 parent_pillar: "/world-to-china-geo/"
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # Building Authority on Baidu Baike & Zhihu

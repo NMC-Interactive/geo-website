@@ -5,6 +5,8 @@ image: "/images/articles/cover-deepseek-bilingual-content.webp"
 detail: "D2-2-2"
 parent_spoke: "/china-ai-ecosystem/deepseek-optimization/"
 cluster: "China AI Ecosystem"
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # Bilingual Content Strategy for DeepSeek

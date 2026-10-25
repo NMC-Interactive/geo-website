@@ -5,6 +5,8 @@ image: "/images/articles/cover-english-content-strategy.webp"
 spoke: "S4-1"
 cluster: "China-to-World"
 parent_pillar: "/china-to-world-geo/"
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # English Content Strategy for Chinese Brands Going Global

@@ -5,6 +5,8 @@ image: "/images/articles/cover-international-pr-media.webp"
 spoke: "S4-3"
 cluster: "China-to-World"
 parent_pillar: "/china-to-world-geo/"
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # International PR & Media: Earning Global Authority

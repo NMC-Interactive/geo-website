@@ -5,6 +5,8 @@ image: "/images/articles/cover-haier-global.webp"
 detail: "D4-6-1"
 parent_spoke: "/china-to-world/case-studies-global-brands/"
 cluster: "China-to-World"
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # Case Study: Haier's Global Brand Building

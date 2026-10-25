@@ -5,6 +5,8 @@ image: "/images/articles/cover-mini-programs-geo.webp"
 detail: "D3-4-2"
 parent_spoke: "/world-to-china/wechat-b2b-geo/"
 cluster: "World-to-China"
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # Mini Programs as GEO Assets

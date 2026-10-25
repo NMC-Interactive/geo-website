@@ -5,6 +5,8 @@ image: "/images/articles/cover-deepseek-optimization.webp"
 spoke: "S2-2"
 cluster: "China AI Ecosystem"
 parent_pillar: "/china-ai-ecosystem/"
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # DeepSeek Optimization: Best Practices for Technical Content

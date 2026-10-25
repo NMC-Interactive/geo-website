@@ -1,0 +1,12 @@
+# Canonical AI-index redirect: /llm.txt was a soft-404, /llms.txt is canonical
+/llm.txt  /llms.txt  301
+/llm.txt/  /llms.txt  301
+
+# Legacy /docs/ routes → canonical root-level URLs (real 301s; the
+# meta-refresh .astro pages remain as local-dev fallbacks)
+/docs/  /sitemap/  301
+/docs/fundamentals/what-is-geo  /geo-fundamentals/what-is-geo/  301
+/docs/fundamentals/what-is-geo/  /geo-fundamentals/what-is-geo/  301
+/docs/fundamentals/history-of-geo  /geo-fundamentals/what-is-geo/history-geo/  301
+/docs/fundamentals/history-of-geo/  /geo-fundamentals/what-is-geo/history-geo/  301
+/docs/*  /sitemap/  301

@@ -5,6 +5,8 @@ image: "/images/articles/cover-deepseek-developer-community.webp"
 detail: "D2-2-3"
 parent_spoke: "/china-ai-ecosystem/deepseek-optimization/"
 cluster: "China AI Ecosystem"
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # Engaging the DeepSeek Developer Community

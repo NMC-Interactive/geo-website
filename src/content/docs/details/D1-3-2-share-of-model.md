@@ -5,6 +5,8 @@ image: "/images/articles/cover-share-of-model.webp"
 detail: "D1-3-2"
 parent_spoke: "/geo-fundamentals/geo-kpis-metrics/"
 cluster: "GEO Fundamentals"
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # Share of Model (SoM): Competitive Benchmarking

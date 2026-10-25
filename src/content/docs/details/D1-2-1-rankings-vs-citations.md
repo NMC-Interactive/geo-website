@@ -5,6 +5,8 @@ image: "/images/articles/cover-rankings-vs-citations.webp"
 detail: "D1-2-1"
 parent_spoke: "/geo-fundamentals/geo-vs-seo/"
 cluster: "GEO Fundamentals"
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # Rankings vs Citations: The Fundamental Shift

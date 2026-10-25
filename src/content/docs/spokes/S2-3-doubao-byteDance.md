@@ -5,6 +5,8 @@ image: "/images/articles/cover-doubao-byteDance.webp"
 spoke: "S2-3"
 cluster: "China AI Ecosystem"
 parent_pillar: "/china-ai-ecosystem/"
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # Doubao & ByteDance: The Content Ecosystem Strategy

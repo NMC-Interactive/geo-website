@@ -5,6 +5,8 @@ image: "/images/articles/cover-case-studies-global-brands.webp"
 spoke: "S4-6"
 cluster: "China-to-World"
 parent_pillar: "/china-to-world-geo/"
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # Case Studies: Chinese Brands That Succeeded Globally

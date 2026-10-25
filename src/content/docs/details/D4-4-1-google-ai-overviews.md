@@ -5,6 +5,8 @@ image: "/images/articles/cover-google-ai-overviews.webp"
 detail: "D4-4-1"
 parent_spoke: "/china-to-world/google-gemini-ai-overviews/"
 cluster: "China-to-World"
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # Optimizing for Google's AI Overviews

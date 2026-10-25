@@ -5,6 +5,8 @@ image: "/images/articles/cover-guanxi-digital.webp"
 detail: "D3-6-1"
 parent_spoke: "/world-to-china/cultural-nuances-marketing/"
 cluster: "World-to-China"
+pubDate: 2026-06-07
+updatedDate: 2026-10-25
 ---
 
 # Guanxi in the Digital Age
